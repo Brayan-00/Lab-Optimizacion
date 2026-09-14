@@ -12,6 +12,7 @@
 #include <iomanip>
 #include <iostream>
 #include <limits>
+#include <map>
 #include <random>
 #include <stdexcept>
 #include <string>
@@ -82,6 +83,57 @@ struct IcpResult {
 
 static constexpr double kPi = 3.14159265358979323846;
 
+struct ProfileSample {
+  std::string region;
+  int iteration;
+  double milliseconds;
+};
+
+static std::vector<ProfileSample> g_profile_samples;
+
+static void record_profile(const std::string &region, int iteration,
+                           double milliseconds) {
+  g_profile_samples.push_back({region, iteration, milliseconds});
+  std::cout << "region_" << region << "_ms=" << milliseconds
+            << " iteration=" << iteration << "\n";
+}
+
+static void write_profile_csv(const std::filesystem::path &path) {
+  std::ofstream out(path);
+  if (!out) {
+    throw std::runtime_error("Could not write " + path.string());
+  }
+
+  out << "region,iteration,milliseconds\n";
+  out << std::fixed << std::setprecision(6);
+  for (const ProfileSample &sample : g_profile_samples) {
+    out << sample.region << "," << sample.iteration << ","
+        << sample.milliseconds << "\n";
+  }
+}
+
+static void print_profile_summary() {
+  std::map<std::string, std::pair<double, int>> totals;
+  for (const ProfileSample &sample : g_profile_samples) {
+    auto &entry = totals[sample.region];
+    entry.first += sample.milliseconds;
+    entry.second += 1;
+  }
+
+  std::cout << "\n=== Resumen de instrumentacion (promedios) ===\n";
+  std::cout << std::left << std::setw(30) << "region" << std::right
+            << std::setw(10) << "samples" << std::setw(14) << "avg_ms"
+            << std::setw(16) << "total_ms" << "\n";
+  std::cout << std::fixed << std::setprecision(4);
+  for (const auto &entry : totals) {
+    const double avg =
+        entry.second.first / static_cast<double>(entry.second.second);
+    std::cout << std::left << std::setw(30) << entry.first << std::right
+              << std::setw(10) << entry.second.second << std::setw(14) << avg
+              << std::setw(16) << entry.second.first << "\n";
+  }
+}
+
 static double normalize_angle(double theta) {
   while (theta > kPi) {
     theta -= 2.0 * kPi;
@@ -122,6 +174,7 @@ static std::vector<Point> apply_transform(const std::vector<Point> &cloud,
   return out;
 }
 
+// Deformación aleatoria del perfil fuente
 static double add_random_deformation(std::vector<Point> &cloud, double amplitude,
                                      unsigned int seed) {
   if (amplitude <= 0.0) {
@@ -189,6 +242,7 @@ static Transform2D compose(const Transform2D &delta,
           s * current.tx + c * current.ty + delta.ty};
 }
 
+// Generación del perfil H o riel
 static std::vector<Point> generate_h_rail_cloud(std::size_t n,
                                                 unsigned int seed) {
   std::mt19937 rng(seed);
@@ -225,6 +279,7 @@ static std::vector<Point> generate_h_rail_cloud(std::size_t n,
   return cloud;
 }
 
+// Construcción de la estructura GridIndex
 class GridIndex {
  public:
   GridIndex(const std::vector<Point> &points, double cell_size)
@@ -235,6 +290,7 @@ class GridIndex {
     }
   }
 
+  // Búsqueda de vecinos más cercanos
   bool nearest(const Point &query, Point &nearest_point,
                double &nearest_distance2) const {
     const auto base = cell_of(query);
@@ -291,6 +347,7 @@ class GridIndex {
   std::unordered_map<std::int64_t, std::vector<int>> cells_;
 };
 
+// Estimación de la transformación rígida
 static Transform2D estimate_rigid_transform(const std::vector<Match> &matches) {
   if (matches.empty()) {
     throw std::runtime_error("No matches available for transform estimation");
@@ -420,13 +477,22 @@ static double rmse_from_distances(const std::vector<double> &distances) {
   return std::sqrt(sum2 / static_cast<double>(distances.size()));
 }
 
+// Comparación de perfiles mediante centroides y distancias
 static ProfileMetrics compare_profiles(const std::vector<Point> &target,
                                        const std::vector<Point> &source,
                                        double coverage_threshold,
-                                       double missing_distance) {
+                                       double missing_distance,
+                                       int profiling_iteration) {
+  const auto t_grid_start = std::chrono::steady_clock::now();
   GridIndex target_index(target, 90.0);
   GridIndex source_index(source, 90.0);
+  const auto t_grid_end = std::chrono::steady_clock::now();
+  record_profile("grid_index_construction", profiling_iteration,
+                 std::chrono::duration<double, std::milli>(t_grid_end -
+                                                            t_grid_start)
+                     .count());
 
+  const auto t_metrics_start = std::chrono::steady_clock::now();
   std::vector<double> source_distances =
       nearest_neighbor_distances(target_index, source, missing_distance);
   std::vector<double> target_distances =
@@ -449,16 +515,24 @@ static ProfileMetrics compare_profiles(const std::vector<Point> &target,
     }
   }
 
-  return {target_centroid,
-          source_centroid,
-          centroid_distance,
-          rmse_from_distances(source_distances),
-          rmse_from_distances(target_distances),
-          rmse_from_distances(all_distances),
-          percentile(all_distances, 0.50),
-          percentile(all_distances, 0.95),
-          *std::max_element(all_distances.begin(), all_distances.end()),
-          static_cast<double>(covered) / static_cast<double>(all_distances.size())};
+  ProfileMetrics metrics{
+      target_centroid,
+      source_centroid,
+      centroid_distance,
+      rmse_from_distances(source_distances),
+      rmse_from_distances(target_distances),
+      rmse_from_distances(all_distances),
+      percentile(all_distances, 0.50),
+      percentile(all_distances, 0.95),
+      *std::max_element(all_distances.begin(), all_distances.end()),
+      static_cast<double>(covered) / static_cast<double>(all_distances.size())};
+
+  const auto t_metrics_end = std::chrono::steady_clock::now();
+  record_profile("profile_metrics", profiling_iteration,
+                 std::chrono::duration<double, std::milli>(t_metrics_end -
+                                                            t_metrics_start)
+                     .count());
+  return metrics;
 }
 
 static double profile_score(const ProfileMetrics &metrics) {
@@ -521,7 +595,14 @@ static IcpResult collimate_icp(const std::vector<Point> &target,
   const double convergence_threshold = VARIATION;
   const double canvas_diag = std::hypot(kCanvasWidth, kCanvasHeight);
   const double missing_distance = canvas_diag;
+
+  const auto t_grid_start = std::chrono::steady_clock::now();
   GridIndex index(target, 90.0);
+  const auto t_grid_end = std::chrono::steady_clock::now();
+  record_profile("grid_index_construction", 0,
+                 std::chrono::duration<double, std::milli>(t_grid_end -
+                                                            t_grid_start)
+                     .count());
   // Initial Transformation: = initial_pca_alignment(target, source, index);
   // Disabled
   Transform2D total{};
@@ -531,7 +612,7 @@ static IcpResult collimate_icp(const std::vector<Point> &target,
   std::vector<IterationMetrics> metrics_history;
 
   ProfileMetrics initial_metrics =
-      compare_profiles(target, current, match_threshold, missing_distance);
+      compare_profiles(target, current, match_threshold, missing_distance, 0);
   double previous_score = profile_score(initial_metrics);
   double score = previous_score;
   int iterations = 0;
@@ -556,6 +637,7 @@ static IcpResult collimate_icp(const std::vector<Point> &target,
     matches.reserve(current.size());
     double distance_sum = 0.0;
 
+    const auto t_nn_start = std::chrono::steady_clock::now();
     for (const Point &p : current) {
       Point nearest_point{0.0, 0.0};
       double d2 = 0.0;
@@ -565,18 +647,30 @@ static IcpResult collimate_icp(const std::vector<Point> &target,
         distance_sum += d2;
       }
     }
+    const auto t_nn_end = std::chrono::steady_clock::now();
+    record_profile("nearest_neighbor_search", iter,
+                   std::chrono::duration<double, std::milli>(t_nn_end -
+                                                              t_nn_start)
+                       .count());
 
     if (matches.size() < current.size() / 2) {
       throw std::runtime_error("Too few nearest-neighbor matches");
     }
 
+    const auto t_est_start = std::chrono::steady_clock::now();
     const Transform2D delta = estimate_rigid_transform(matches);
+    const auto t_est_end = std::chrono::steady_clock::now();
+    record_profile("estimate_transform", iter,
+                   std::chrono::duration<double, std::milli>(t_est_end -
+                                                              t_est_start)
+                       .count());
+
     total = compose(delta, total);
     current = apply_transform(current, delta);
     const double match_rmse =
         std::sqrt(distance_sum / static_cast<double>(matches.size()));
-    const ProfileMetrics metrics =
-        compare_profiles(target, current, match_threshold, missing_distance);
+    const ProfileMetrics metrics = compare_profiles(
+        target, current, match_threshold, missing_distance, iter);
     score = profile_score(metrics);
 
     const double score_variation =
@@ -681,6 +775,7 @@ static void draw_viewer_overlay(std::vector<unsigned char> &rgb, int width,
   draw_rect(rgb, width, height, 24, 90, 48, 104, 40, 170, 80);
 }
 
+// Renderizado de los cuadros para el visor
 static std::vector<unsigned char> render_motion_frame(
     const std::vector<Point> &target, const std::vector<Point> &source,
     const std::vector<std::vector<Point>> &frames, std::size_t frame_index,
@@ -789,6 +884,8 @@ static void export_reconstruction(
   const int height = 720;
 
   std::filesystem::create_directories(output_dir);
+
+  const auto t_summary_start = std::chrono::steady_clock::now();
   write_cloud_csv(output_dir / "target_profile.csv", target, "target");
   write_cloud_csv(output_dir / "source_initial_profile.csv", source,
                   "source_initial");
@@ -797,8 +894,14 @@ static void export_reconstruction(
   write_transform_csv(output_dir / "source_motion.csv", result.transforms);
   write_metrics_csv(output_dir / "profile_metrics.csv",
                     result.metrics_history);
+  const auto t_summary_end = std::chrono::steady_clock::now();
+  record_profile("export_csv_ppm", -1,
+                 std::chrono::duration<double, std::milli>(t_summary_end -
+                                                            t_summary_start)
+                     .count());
 
   for (std::size_t i = 0; i < result.snapshots.size(); ++i) {
+    const auto t_frame_start = std::chrono::steady_clock::now();
     std::ostringstream name;
     name << "frame_" << std::setw(3) << std::setfill('0') << i << ".ppm";
     write_cloud_csv(output_dir / ("source_frame_" + name.str().substr(6, 3) +
@@ -808,6 +911,11 @@ static void export_reconstruction(
               render_motion_frame(target, source, result.snapshots, i, width,
                                   height),
               width, height);
+    const auto t_frame_end = std::chrono::steady_clock::now();
+    record_profile("export_csv_ppm", static_cast<int>(i),
+                   std::chrono::duration<double, std::milli>(t_frame_end -
+                                                              t_frame_start)
+                       .count());
   }
 
   std::cout << "Exported reconstruction to " << output_dir << "\n";
@@ -850,6 +958,7 @@ static void show_with_gstreamer(const std::vector<Point> &target,
   gst_element_set_state(pipeline, GST_STATE_PLAYING);
 
   for (std::size_t i = 0; i < frames.size(); ++i) {
+    const auto t_render_start = std::chrono::steady_clock::now();
     std::vector<unsigned char> rgb =
         render_motion_frame(target, source, frames, i, width, height);
     GstBuffer *buffer = gst_buffer_new_allocate(nullptr, rgb.size(), nullptr);
@@ -863,6 +972,11 @@ static void show_with_gstreamer(const std::vector<Point> &target,
     GST_BUFFER_DURATION(buffer) = GST_SECOND / fps;
 
     GstFlowReturn ret = gst_app_src_push_buffer(GST_APP_SRC(appsrc), buffer);
+    const auto t_render_end = std::chrono::steady_clock::now();
+    record_profile("viewer_render_send", static_cast<int>(i),
+                   std::chrono::duration<double, std::milli>(t_render_end -
+                                                              t_render_start)
+                       .count());
     if (ret != GST_FLOW_OK) {
       break;
     }
@@ -888,6 +1002,8 @@ int main(int argc, char **argv) {
   bool export_outputs = false;
   double deformation_amplitude = 60.0;
   std::filesystem::path output_dir = "reconstruction";
+  int profile_repeats = 1;
+  std::filesystem::path profile_output = "instrumentation.csv";
   for (int i = 1; i < argc; ++i) {
     const std::string arg = argv[i];
     if (arg == "--viewer") {
@@ -901,10 +1017,15 @@ int main(int argc, char **argv) {
     } else if (arg == "--output" && i + 1 < argc) {
       output_dir = argv[++i];
       export_outputs = true;
+    } else if (arg == "--profile-repeats" && i + 1 < argc) {
+      profile_repeats = std::max(1, std::stoi(argv[++i]));
+    } else if (arg == "--profile-output" && i + 1 < argc) {
+      profile_output = argv[++i];
     } else {
       std::cerr << "usage: " << argv[0]
                 << " [--viewer] [--export] [--output directory]"
-                << " [--deformation units] [--no-deformation]\n";
+                << " [--deformation units] [--no-deformation]"
+                << " [--profile-repeats n] [--profile-output path]\n";
       return EXIT_FAILURE;
     }
   }
@@ -914,39 +1035,64 @@ int main(int argc, char **argv) {
     const Transform2D target_to_source =
         transform_about_canvas_center(18.0 * kPi / 180.0, 620.0, -430.0);
 
-    std::vector<Point> target = generate_h_rail_cloud(points_per_cloud, 7);
-    std::vector<Point> source = apply_transform(target, target_to_source);
-    const double deformation_rms =
-        add_random_deformation(source, deformation_amplitude, 31);
+    std::vector<Point> target;
+    std::vector<Point> source;
+    IcpResult result;
 
-    std::mt19937 rng(23);
-    std::normal_distribution<double> sensor_noise(0.0, 10.0);
-    for (Point &p : source) {
-      p.x = std::clamp(p.x + sensor_noise(rng), 0.0, kCanvasWidth);
-      p.y = std::clamp(p.y + sensor_noise(rng), 0.0, kCanvasHeight);
+    for (int rep = 1; rep <= profile_repeats; ++rep) {
+      if (profile_repeats > 1) {
+        std::cout << "\n--- profiling repetition " << rep << "/"
+                  << profile_repeats << " ---\n";
+      }
+
+      const auto t_target_start = std::chrono::steady_clock::now();
+      target = generate_h_rail_cloud(points_per_cloud, 7);
+      const auto t_target_end = std::chrono::steady_clock::now();
+      record_profile("target_generation", rep,
+                     std::chrono::duration<double, std::milli>(
+                         t_target_end - t_target_start)
+                         .count());
+
+      const auto t_source_start = std::chrono::steady_clock::now();
+      source = apply_transform(target, target_to_source);
+      const double deformation_rms =
+          add_random_deformation(source, deformation_amplitude, 31);
+
+      std::mt19937 rng(23);
+      std::normal_distribution<double> sensor_noise(0.0, 10.0);
+      for (Point &p : source) {
+        p.x = std::clamp(p.x + sensor_noise(rng), 0.0, kCanvasWidth);
+        p.y = std::clamp(p.y + sensor_noise(rng), 0.0, kCanvasHeight);
+      }
+      const auto t_source_end = std::chrono::steady_clock::now();
+      record_profile("source_transform_deform_noise", rep,
+                     std::chrono::duration<double, std::milli>(
+                         t_source_end - t_source_start)
+                         .count());
+
+      std::cout << "Generated two H-shaped rail point clouds with "
+                << points_per_cloud << " points each.\n";
+      std::cout << "Canvas: " << kCanvasWidth << " x " << kCanvasHeight
+                << " coordinate units\n";
+      std::cout << "Applied random non-rigid source deformation: amplitude="
+                << deformation_amplitude << " units, rms=" << deformation_rms
+                << " units\n";
+      print_transform("Synthetic target->source transform", target_to_source);
+      std::cout << "Collimating source cloud onto target cloud...\n";
+
+      result = collimate_icp(target, source, viewer || export_outputs);
+
+      print_transform("Recovered source->target transform",
+                      result.source_to_target);
+      std::cout << "Finished after " << result.iterations
+                << " iterations with profile_score=" << std::fixed
+                << std::setprecision(8) << result.score << "\n";
     }
 
-    std::cout << "Generated two H-shaped rail point clouds with "
-              << points_per_cloud << " points each.\n";
-    std::cout << "Canvas: " << kCanvasWidth << " x " << kCanvasHeight
-              << " coordinate units\n";
-    std::cout << "Applied random non-rigid source deformation: amplitude="
-              << deformation_amplitude << " units, rms=" << deformation_rms
-              << " units\n";
-    print_transform("Synthetic target->source transform", target_to_source);
-    std::cout << "Collimating source cloud onto target cloud...\n";
-
-    IcpResult result = collimate_icp(target, source, viewer || export_outputs);
     const Transform2D expected_source_to_target =
         inverse_transform(target_to_source);
-
     print_transform("Expected source->target transform",
                     expected_source_to_target);
-    print_transform("Recovered source->target transform",
-                    result.source_to_target);
-    std::cout << "Finished after " << result.iterations
-              << " iterations with profile_score=" << std::fixed
-              << std::setprecision(8) << result.score << "\n";
 
     if (export_outputs) {
       export_reconstruction(output_dir, target, source, result);
@@ -956,6 +1102,13 @@ int main(int argc, char **argv) {
       std::cout << "Opening GStreamer viewer: blue=target, red=initial source, "
                    "green=aligned source.\n";
       show_with_gstreamer(target, source, result.snapshots);
+    }
+
+    if (!g_profile_samples.empty()) {
+      print_profile_summary();
+      write_profile_csv(profile_output);
+      std::cout << "\nInstrumentation CSV written to " << profile_output
+                << "\n";
     }
   } catch (const std::exception &ex) {
     std::cerr << "error: " << ex.what() << "\n";
