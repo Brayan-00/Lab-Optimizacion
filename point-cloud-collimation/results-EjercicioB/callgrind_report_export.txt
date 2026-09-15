@@ -1,0 +1,2395 @@
+--------------------------------------------------------------------------------
+Profile data file 'callgrind_export.out' (creator: callgrind-3.26.0)
+--------------------------------------------------------------------------------
+I1 cache: 
+D1 cache: 
+LL cache: 
+Timerange: Basic block 0 - 33595617555
+Trigger: Program termination
+Profiled target:  ./point_cloud_collimation --export (PID 12967, part 1)
+Events recorded:  Ir
+Events shown:     Ir
+Event sort order: Ir
+Thresholds:       99
+Include dirs:     
+User annotated:   
+Auto-annotation:  on
+
+--------------------------------------------------------------------------------
+Ir                       
+--------------------------------------------------------------------------------
+237,412,442,596 (100.0%)  PROGRAM TOTALS
+
+--------------------------------------------------------------------------------
+Ir                        file:function
+--------------------------------------------------------------------------------
+166,674,287,838 (70.20%)  point_cloud_collimation.cpp:GridIndex::nearest(Point const&, Point&, double&) const [/home/shiofi/Desktop/Compu. Heterogénea/Lab-Optimizacion/point-cloud-collimation/point_cloud_collimation]
+ 20,804,515,668 ( 8.76%)  /usr/include/c++/15/bits/stl_vector.h:GridIndex::nearest(Point const&, Point&, double&) const
+  7,290,929,053 ( 3.07%)  /usr/include/c++/15/bits/hashtable.h:GridIndex::nearest(Point const&, Point&, double&) const
+  7,233,634,396 ( 3.05%)  ./stdio-common/./stdio-common/printf_fp.c:__printf_fp_buffer_1.isra.0 [/usr/lib/x86_64-linux-gnu/libc.so.6]
+  3,964,397,630 ( 1.67%)  ./stdlib/./stdlib/divrem.c:__mpn_divrem [/usr/lib/x86_64-linux-gnu/libc.so.6]
+  3,680,330,298 ( 1.55%)  /usr/include/c++/15/bits/stl_algobase.h:GridIndex::nearest(Point const&, Point&, double&) const
+  3,484,986,660 ( 1.47%)  /usr/include/c++/15/bits/hashtable_policy.h:GridIndex::nearest(Point const&, Point&, double&) const
+  2,604,003,377 ( 1.10%)  ./math/../sysdeps/ieee754/dbl-64/s_llround.c:lround [/usr/lib/x86_64-linux-gnu/libm.so.6]
+  2,225,327,655 ( 0.94%)  ./stdlib/../sysdeps/x86_64/mul_1.S:__mpn_mul_1 [/usr/lib/x86_64-linux-gnu/libc.so.6]
+  1,801,555,634 ( 0.76%)  ./stdio-common/./stdio-common/printf_fp.c:hack_digit [/usr/lib/x86_64-linux-gnu/libc.so.6]
+  1,395,010,695 ( 0.59%)  point_cloud_collimation.cpp:draw_cloud(std::vector<unsigned char, std::allocator<unsigned char> >&, std::vector<Point, std::allocator<Point> > const&, int, int, unsigned char, unsigned char, unsigned char) [clone .constprop.0] [/home/shiofi/Desktop/Compu. Heterogénea/Lab-Optimizacion/point-cloud-collimation/point_cloud_collimation]
+  1,248,365,625 ( 0.53%)  ./stdio-common/./stdio-common/vfprintf-internal.c:__printf_buffer [/usr/lib/x86_64-linux-gnu/libc.so.6]
+  1,023,309,524 ( 0.43%)  ???:std::basic_streambuf<char, std::char_traits<char> >::xsputn(char const*, long) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.35]
+    999,129,482 ( 0.42%)  ???:std::basic_filebuf<char, std::char_traits<char> >::xsputn(char const*, long) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.35]
+    915,468,113 ( 0.39%)  ???:std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.35]
+    903,169,127 ( 0.38%)  ./string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:__memcpy_avx_unaligned_erms [/usr/lib/x86_64-linux-gnu/libc.so.6]
+    864,136,134 ( 0.36%)  ???:std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.35]
+    617,513,896 ( 0.26%)  /usr/include/c++/15/bits/stl_function.h:GridIndex::nearest(Point const&, Point&, double&) const
+    467,336,875 ( 0.20%)  ./stdio-common/./stdio-common/Xprintf_buffer_write.c:__printf_buffer_write [/usr/lib/x86_64-linux-gnu/libc.so.6]
+    437,102,232 ( 0.18%)  point_cloud_collimation.cpp:GridIndex::GridIndex(std::vector<Point, std::allocator<Point> > const&, double) [/home/shiofi/Desktop/Compu. Heterogénea/Lab-Optimizacion/point-cloud-collimation/point_cloud_collimation]
+    384,071,176 ( 0.16%)  ???:std::ostream::sentry::sentry(std::ostream&) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.35]
+    352,103,125 ( 0.15%)  ???:std::ostream& std::ostream::_M_insert<double>(double) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.35]
+    345,701,250 ( 0.15%)  ???:0x0000000000118200 [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.35]
+    332,897,500 ( 0.14%)  ./stdio-common/./stdio-common/printf_fp.c:__printf_fp_l_buffer [/usr/lib/x86_64-linux-gnu/libc.so.6]
+    281,682,544 ( 0.12%)  ./locale/./locale/uselocale.c:uselocale [/usr/lib/x86_64-linux-gnu/libc.so.6]
+    272,013,620 ( 0.11%)  ???:std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<unsigned long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, unsigned long) const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.35]
+    262,457,523 ( 0.11%)  ./stdlib/./stdlib/mul.c:__mpn_mul [/usr/lib/x86_64-linux-gnu/libc.so.6]
+    260,129,553 ( 0.11%)  ./stdlib/../sysdeps/x86/gmp-arch.h:__mpn_divrem
+    245,102,385 ( 0.10%)  ./math/../sysdeps/ieee754/dbl-64/s_sin.c:__sincos_fma
+    244,993,736 ( 0.10%)  ???:0x0000000000152680 [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.35]
+    243,271,250 ( 0.10%)  ./string/../sysdeps/x86_64/multiarch/strchr-avx2.S:__strchrnul_avx2 [/usr/lib/x86_64-linux-gnu/libc.so.6]
+    230,457,330 ( 0.10%)  ./stdlib/../sysdeps/x86_64/rshift.S:__mpn_rshift [/usr/lib/x86_64-linux-gnu/libc.so.6]
+    217,447,102 ( 0.09%)  point_cloud_collimation.cpp:collimate_icp(std::vector<Point, std::allocator<Point> > const&, std::vector<Point, std::allocator<Point> > const&, bool) [/home/shiofi/Desktop/Compu. Heterogénea/Lab-Optimizacion/point-cloud-collimation/point_cloud_collimation]
+    214,381,544 ( 0.09%)  /usr/include/c++/15/bits/stl_iterator.h:GridIndex::nearest(Point const&, Point&, double&) const
+    202,406,578 ( 0.09%)  point_cloud_collimation.cpp:compare_profiles(std::vector<Point, std::allocator<Point> > const&, std::vector<Point, std::allocator<Point> > const&, double, double) [clone .constprop.0] [/home/shiofi/Desktop/Compu. Heterogénea/Lab-Optimizacion/point-cloud-collimation/point_cloud_collimation]
+    201,645,675 ( 0.08%)  ???:0x000000000014df80 [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.35]
+    192,056,258 ( 0.08%)  ???:std::__num_base::_S_format_float(std::ios_base const&, char*, char) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.35]
+    186,000,242 ( 0.08%)  ???:0x0000000004003530 [???]
+    182,408,550 ( 0.08%)  ???:std::ostream& std::ostream::_M_insert<unsigned long>(unsigned long) [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.35]
+    179,252,500 ( 0.08%)  ./libio/./libio/vsnprintf.c:vsnprintf [/usr/lib/x86_64-linux-gnu/libc.so.6]
+    165,601,687 ( 0.07%)  point_cloud_collimation.cpp:nearest_neighbor_distances(GridIndex const&, std::vector<Point, std::allocator<Point> > const&, double) [clone .constprop.0] [/home/shiofi/Desktop/Compu. Heterogénea/Lab-Optimizacion/point-cloud-collimation/point_cloud_collimation]
+    154,148,680 ( 0.06%)  ./stdlib/./stdlib/cmp.c:__mpn_cmp [/usr/lib/x86_64-linux-gnu/libc.so.6]
+    141,411,966 ( 0.06%)  /usr/include/c++/15/bits/stl_algo.h:percentile(std::vector<double, std::allocator<double> >, double)
+    134,439,392 ( 0.06%)  ./stdlib/../sysdeps/ieee754/dbl-64/dbl2mpn.c:__mpn_extract_double [/usr/lib/x86_64-linux-gnu/libc.so.6]
+    122,401,170 ( 0.05%)  ./math/../sysdeps/ieee754/dbl-64/s_sincos.c:__sincos_fma [/usr/lib/x86_64-linux-gnu/libm.so.6]
+    122,201,269 ( 0.05%)  point_cloud_collimation.cpp:apply_transform(std::vector<Point, std::allocator<Point> > const&, Transform2D const&) [/home/shiofi/Desktop/Compu. Heterogénea/Lab-Optimizacion/point-cloud-collimation/point_cloud_collimation]
+    121,636,841 ( 0.05%)  ./string/../sysdeps/x86_64/multiarch/memchr-avx2.S:__memchr_avx2 [/usr/lib/x86_64-linux-gnu/libc.so.6]
+    121,129,680 ( 0.05%)  /usr/include/c++/15/bits/hashtable.h:GridIndex::GridIndex(std::vector<Point, std::allocator<Point> > const&, double)
+    115,233,750 ( 0.05%)  ./stdio-common/./stdio-common/Xprintf_buffer_done.c:__printf_buffer_done [/usr/lib/x86_64-linux-gnu/libc.so.6]
+    102,430,000 ( 0.04%)  ./stdlib/../sysdeps/x86_64/lshift.S:__mpn_lshift [/usr/lib/x86_64-linux-gnu/libc.so.6]
+     96,028,974 ( 0.04%)  ???:std::locale::id::_M_id() const [/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.35]
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /usr/include/c++/15/bits/stl_iterator.h
+--------------------------------------------------------------------------------
+Ir                   
+
+-- line 1050 ----------------------------------------
+          .           
+          .                 __attribute__((__always_inline__))
+          .                 _GLIBCXX_CONSTEXPR
+          .                 __normal_iterator() _GLIBCXX_NOEXCEPT
+          .                 : _M_current() { }
+          .           
+          .                 __attribute__((__always_inline__))
+          .                 explicit _GLIBCXX_CONSTEXPR
+         46 ( 0.00%)        __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
+214,383,130 ( 0.09%)        : _M_current(__i) { }
+          .           
+          .                 // Allow iterator to const_iterator conversion
+          .           #if __cplusplus >= 201103L
+          .           # ifdef __glibcxx_concepts
+          .                 template<typename _Iter> requires std::is_convertible_v<_Iter, _Iterator>
+          .           # else
+          .                 template<typename _Iter, typename = __convertible_from<_Iter>>
+          .           # endif
+-- line 1067 ----------------------------------------
+-- line 1095 ----------------------------------------
+          .                 operator->() const _GLIBCXX_NOEXCEPT
+          .                 { return _M_current; }
+          .           
+          .                 __attribute__((__always_inline__))
+          .                 _GLIBCXX14_CONSTEXPR
+          .                 __normal_iterator&
+          .                 operator++() _GLIBCXX_NOEXCEPT
+          .                 {
+  9,403,053 ( 0.00%)  	++_M_current;
+          .           	return *this;
+          .                 }
+          .           
+          .                 __attribute__((__always_inline__))
+          .                 _GLIBCXX14_CONSTEXPR
+          .                 __normal_iterator
+          .                 operator++(int) _GLIBCXX_NOEXCEPT
+          .                 { return __normal_iterator(_M_current++); }
+          .           
+          .                 // Bidirectional iterator requirements
+          .           
+          .                 __attribute__((__always_inline__))
+          .                 _GLIBCXX14_CONSTEXPR
+          .                 __normal_iterator&
+         16 ( 0.00%)        operator--() _GLIBCXX_NOEXCEPT
+          .                 {
+  9,404,857 ( 0.00%)  	--_M_current;
+          .           	return *this;
+          .                 }
+          .           
+          .                 __attribute__((__always_inline__))
+          .                 _GLIBCXX14_CONSTEXPR
+          .                 __normal_iterator
+          .                 operator--(int) _GLIBCXX_NOEXCEPT
+          .                 { return __normal_iterator(_M_current--); }
+-- line 1128 ----------------------------------------
+-- line 1140 ----------------------------------------
+          .                 __normal_iterator&
+          .                 operator+=(difference_type __n) _GLIBCXX_NOEXCEPT
+          .                 { _M_current += __n; return *this; }
+          .           
+          .                 _GLIBCXX_NODISCARD __attribute__((__always_inline__))
+          .                 _GLIBCXX_CONSTEXPR
+          .                 __normal_iterator
+          .                 operator+(difference_type __n) const _GLIBCXX_NOEXCEPT
+    103,748 ( 0.00%)        { return __normal_iterator(_M_current + __n); }
+          .           
+          .                 __attribute__((__always_inline__))
+          .                 _GLIBCXX14_CONSTEXPR
+          .                 __normal_iterator&
+          .                 operator-=(difference_type __n) _GLIBCXX_NOEXCEPT
+          .                 { _M_current -= __n; return *this; }
+          .           
+          .                 _GLIBCXX_NODISCARD __attribute__((__always_inline__))
+-- line 1156 ----------------------------------------
+-- line 1332 ----------------------------------------
+          .               { return __lhs.base() - __rhs.base(); }
+          .           
+          .             template<typename _Iterator, typename _Container>
+          .               _GLIBCXX_NODISCARD __attribute__((__always_inline__)) _GLIBCXX_CONSTEXPR
+          .               inline typename __normal_iterator<_Iterator, _Container>::difference_type
+          .               operator-(const __normal_iterator<_Iterator, _Container>& __lhs,
+          .           	      const __normal_iterator<_Iterator, _Container>& __rhs)
+          .               _GLIBCXX_NOEXCEPT
+    303,761 ( 0.00%)      { return __lhs.base() - __rhs.base(); }
+          .           
+          .             template<typename _Iterator, typename _Container>
+          .               _GLIBCXX_NODISCARD __attribute__((__always_inline__)) _GLIBCXX_CONSTEXPR
+          .               inline __normal_iterator<_Iterator, _Container>
+          .               operator+(typename __normal_iterator<_Iterator, _Container>::difference_type
+          .           	      __n, const __normal_iterator<_Iterator, _Container>& __i)
+          .               _GLIBCXX_NOEXCEPT
+          .               { return __normal_iterator<_Iterator, _Container>(__i.base() + __n); }
+-- line 1348 ----------------------------------------
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: point_cloud_collimation.cpp
+--------------------------------------------------------------------------------
+Ir                      
+
+-- line 65 ----------------------------------------
+             .             Transform2D transform;
+             .             ProfileMetrics profile;
+             .             double match_rmse;
+             .             double profile_score;
+             .             double score_variation;
+             .             double transform_step;
+             .           };
+             .           
+             8 ( 0.00%)  struct IcpResult {
+             .             Transform2D source_to_target;
+             .             std::vector<Point> aligned;
+             .             std::vector<std::vector<Point>> snapshots;
+             .             std::vector<Transform2D> transforms;
+             .             std::vector<IterationMetrics> metrics_history;
+             .             int iterations;
+             .             double score;
+             .           };
+             .           
+             .           static constexpr double kPi = 3.14159265358979323846;
+             .           
+             .           static double normalize_angle(double theta) {
+           249 ( 0.00%)    while (theta > kPi) {
+             .               theta -= 2.0 * kPi;
+             .             }
+           414 ( 0.00%)    while (theta < -kPi) {
+             .               theta += 2.0 * kPi;
+             .             }
+             .             return theta;
+             .           }
+             .           
+             .           static Point apply_transform(const Point &p, const Transform2D &t) {
+     4,700,000 ( 0.00%)    const double c = std::cos(t.theta);
+   428,600,000 ( 0.18%)  => ???:0x00000000040036f0 (4,700,000x)
+             .             const double s = std::sin(t.theta);
+    70,500,000 ( 0.03%)    return {c * p.x - s * p.y + t.tx, s * p.x + c * p.y + t.ty};
+             .           }
+             .           
+             .           static Transform2D transform_about_canvas_center(double theta, double tx,
+             .                                                            double ty) {
+             .             const double c = std::cos(theta);
+             .             const double s = std::sin(theta);
+             .             return {theta, kCanvasCenterX + tx - (c * kCanvasCenterX - s * kCanvasCenterY),
+             4 ( 0.00%)            kCanvasCenterY + ty - (s * kCanvasCenterX + c * kCanvasCenterY)};
+             .           }
+             .           
+             .           static Transform2D inverse_transform(const Transform2D &t) {
+             .             const double c = std::cos(-t.theta);
+             .             const double s = std::sin(-t.theta);
+             8 ( 0.00%)    return {-t.theta, -(c * t.tx - s * t.ty), -(s * t.tx + c * t.ty)};
+             .           }
+             .           
+             .           static std::vector<Point> apply_transform(const std::vector<Point> &cloud,
+           564 ( 0.00%)                                            const Transform2D &t) {
+             .             std::vector<Point> out;
+            47 ( 0.00%)    out.reserve(cloud.size());
+        17,724 ( 0.00%)  => /usr/include/c++/15/bits/vector.tcc:std::vector<Point, std::allocator<Point> >::reserve(unsigned long) (47x)
+    23,500,094 ( 0.01%)    for (const Point &p : cloud) {
+    23,500,000 ( 0.01%)      out.push_back(apply_transform(p, t));
+             .             }
+             .             return out;
+           564 ( 0.00%)  }
+             .           
+             .           static double add_random_deformation(std::vector<Point> &cloud, double amplitude,
+             .                                                unsigned int seed) {
+             3 ( 0.00%)    if (amplitude <= 0.0) {
+             .               return 0.0;
+             .             }
+             .           
+             .             struct DeformationBump {
+             .               Point center;
+             .               Point direction;
+             .               double sigma;
+             .             };
+             .           
+             .             std::mt19937 rng(seed);
+             .             std::uniform_real_distribution<double> center_x(1500.0, 8500.0);
+             .             std::uniform_real_distribution<double> center_y(1200.0, 8800.0);
+             .             std::uniform_real_distribution<double> direction(-1.0, 1.0);
+             .             std::uniform_real_distribution<double> sigma(700.0, 1800.0);
+             3 ( 0.00%)    std::normal_distribution<double> local_noise(0.0, amplitude * 0.10);
+             .           
+             .             std::vector<DeformationBump> bumps;
+            18 ( 0.00%)    for (int i = 0; i < 8; ++i) {
+             .               Point d{direction(rng), direction(rng)};
+            24 ( 0.00%)      const double norm = std::hypot(d.x, d.y);
+           428 ( 0.00%)  => ???:0x00000000040035e0 (8x)
+            24 ( 0.00%)      if (norm > 1.0e-12) {
+            24 ( 0.00%)        d.x /= norm;
+             8 ( 0.00%)        d.y /= norm;
+             .               }
+             .               bumps.push_back({{center_x(rng), center_y(rng)}, d, sigma(rng)});
+             .             }
+             .           
+             2 ( 0.00%)    double displacement2_sum = 0.0;
+       300,004 ( 0.00%)    for (Point &p : cloud) {
+       400,000 ( 0.00%)      const double wave_x =
+       700,009 ( 0.00%)          amplitude * 0.35 * std::sin((2.0 * kPi * p.y / kCanvasHeight) * 2.7 +
+     9,663,943 ( 0.00%)  => ???:0x0000000004003570 (100,000x)
+             .                                               0.4);
+             .               const double wave_y =
+       900,000 ( 0.00%)          amplitude * 0.25 * std::sin((2.0 * kPi * p.x / kCanvasWidth) * 3.1 -
+     9,715,803 ( 0.00%)  => ???:0x0000000004003570 (100,000x)
+             .                                               0.9);
+       300,000 ( 0.00%)      double dx = wave_x + local_noise(rng);
+             .               double dy = wave_y + local_noise(rng);
+             .           
+     3,100,000 ( 0.00%)      for (const DeformationBump &bump : bumps) {
+     1,600,000 ( 0.00%)        const double ex = p.x - bump.center.x;
+     2,400,000 ( 0.00%)        const double ey = p.y - bump.center.y;
+             .                 const double influence =
+     8,000,000 ( 0.00%)            std::exp(-(ex * ex + ey * ey) / (2.0 * bump.sigma * bump.sigma));
+    47,200,000 ( 0.02%)  => ???:0x00000000040039b0 (800,000x)
+     4,800,000 ( 0.00%)        dx += amplitude * influence * bump.direction.x;
+             .                 dy += amplitude * influence * bump.direction.y;
+             .               }
+             .           
+     1,300,000 ( 0.00%)      p.x = std::clamp(p.x + dx, 0.0, kCanvasWidth);
+             .               p.y = std::clamp(p.y + dy, 0.0, kCanvasHeight);
+       900,000 ( 0.00%)      displacement2_sum += dx * dx + dy * dy;
+             .             }
+             .           
+             6 ( 0.00%)    return std::sqrt(displacement2_sum / static_cast<double>(cloud.size()));
+            10 ( 0.00%)  => ???:0x0000000004003770 (1x)
+             .           }
+             .           
+             .           static Transform2D compose(const Transform2D &delta,
+             .                                      const Transform2D &current) {
+             .             const double c = std::cos(delta.theta);
+             .             const double s = std::sin(delta.theta);
+           180 ( 0.00%)    return {normalize_angle(delta.theta + current.theta),
+           450 ( 0.00%)            c * current.tx - s * current.ty + delta.tx,
+           315 ( 0.00%)            s * current.tx + c * current.ty + delta.ty};
+             .           }
+             .           
+             .           static std::vector<Point> generate_h_rail_cloud(std::size_t n,
+             .                                                           unsigned int seed) {
+             .             std::mt19937 rng(seed);
+             .             std::uniform_real_distribution<double> rail_y(1200.0, 8800.0);
+             .             std::uniform_real_distribution<double> tie_x(3200.0, 6800.0);
+             .             std::uniform_int_distribution<int> tie_index(0, 10);
+             .             std::normal_distribution<double> noise(0.0, 12.0);
+             .             std::normal_distribution<double> rail_width(0.0, 24.0);
+             .             std::normal_distribution<double> tie_width(0.0, 18.0);
+             .           
+             .             std::vector<Point> cloud;
+             5 ( 0.00%)    cloud.reserve(n);
+           369 ( 0.00%)  => /usr/include/c++/15/bits/vector.tcc:std::vector<Point, std::allocator<Point> >::reserve(unsigned long) (1x)
+             .           
+       300,003 ( 0.00%)    for (std::size_t i = 0; i < n; ++i) {
+     1,000,000 ( 0.00%)      const double selector = static_cast<double>(i % 10) / 10.0;
+             .           
+       300,000 ( 0.00%)      if (selector < 0.35) {
+        80,000 ( 0.00%)        cloud.push_back({3600.0 + rail_width(rng),
+       400,000 ( 0.00%)                         std::clamp(rail_y(rng) + noise(rng), 0.0,
+             .                                             kCanvasHeight)});
+       180,000 ( 0.00%)      } else if (selector < 0.70) {
+        60,000 ( 0.00%)        cloud.push_back({6400.0 + rail_width(rng),
+       300,000 ( 0.00%)                         std::clamp(rail_y(rng) + noise(rng), 0.0,
+             .                                             kCanvasHeight)});
+             .               } else {
+        90,000 ( 0.00%)        const double y = 1600.0 + static_cast<double>(tie_index(rng)) * 680.0;
+             .                 cloud.push_back(
+       390,000 ( 0.00%)            {std::clamp(tie_x(rng) + noise(rng), 0.0, kCanvasWidth),
+             .                      std::clamp(y + tie_width(rng), 0.0, kCanvasHeight)});
+             .               }
+             .             }
+             .           
+             4 ( 0.00%)    std::shuffle(cloud.begin(), cloud.end(), rng);
+     8,199,323 ( 0.00%)  => /usr/include/c++/15/bits/stl_algo.h:void std::shuffle<__gnu_cxx::__normal_iterator<Point*, std::vector<Point, std::allocator<Point> > >, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&>(__gnu_cxx::__normal_iterator<Point*, std::vector<Point, std::allocator<Point> > >, __gnu_cxx::__normal_iterator<Point*, std::vector<Point, std::allocator<Point> > >, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) (1x)
+             .             return cloud;
+             .           }
+             .           
+             .           class GridIndex {
+             .            public:
+           837 ( 0.00%)    GridIndex(const std::vector<Point> &points, double cell_size)
+           186 ( 0.00%)        : points_(points), cell_size_(cell_size) {
+    37,200,465 ( 0.02%)      for (std::size_t i = 0; i < points_.size(); ++i) {
+             .                 const auto cell = cell_of(points_[i]);
+             .                 cells_[key(cell.first, cell.second)].push_back(static_cast<int>(i));
+             .               }
+           744 ( 0.00%)    }
+             .           
+   151,800,000 ( 0.06%)    bool nearest(const Point &query, Point &nearest_point,
+             .                          double &nearest_distance2) const {
+             .               const auto base = cell_of(query);
+    41,400,000 ( 0.02%)      nearest_distance2 = std::numeric_limits<double>::max();
+    55,200,000 ( 0.02%)      bool found = false;
+             .           
+   135,014,552 ( 0.06%)      for (int radius = 0; radius <= 16; ++radius) {
+ 1,706,357,805 ( 0.72%)        for (int dy = -radius; dy <= radius; ++dy) {
+ 5,986,093,717 ( 2.52%)          for (int dx = -radius; dx <= radius; ++dx) {
+10,014,975,813 ( 4.22%)            if (std::max(std::abs(dx), std::abs(dy)) != radius) {
+             .                       continue;
+             .                     }
+             .           
+ 1,303,076,352 ( 0.55%)            const auto it = cells_.find(key(base.first + dx, base.second + dy));
+   214,381,544 ( 0.09%)            if (it == cells_.end()) {
+             .                       continue;
+             .                     }
+             .           
+30,938,796,572 (13.03%)            for (int index : it->second) {
+10,241,471,676 ( 4.31%)              const Point &candidate = points_[static_cast<std::size_t>(index)];
+20,482,943,352 ( 8.63%)              const double ex = query.x - candidate.x;
+20,482,943,352 ( 8.63%)              const double ey = query.y - candidate.y;
+30,724,415,028 (12.94%)              const double d2 = ex * ex + ey * ey;
+30,724,415,028 (12.94%)              if (d2 < nearest_distance2) {
+    91,713,851 ( 0.04%)                nearest_distance2 = d2;
+   183,427,702 ( 0.08%)                nearest_point = candidate;
+    91,713,851 ( 0.04%)                found = true;
+             .                       }
+             .                     }
+             .                   }
+             .                 }
+             .           
+   324,521,223 ( 0.14%)        if (found && nearest_distance2 < cell_size_ * cell_size_ * radius * radius) {
+             .                   break;
+             .                 }
+             .               }
+             .           
+             .               return found;
+   110,400,000 ( 0.05%)    }
+             .           
+             .            private:
+             .             std::pair<int, int> cell_of(const Point &p) const {
+   489,600,000 ( 0.21%)      return {static_cast<int>(std::floor(p.x / cell_size_)),
+   434,400,000 ( 0.18%)              static_cast<int>(std::floor(p.y / cell_size_))};
+             .             }
+             .           
+             .             static std::int64_t key(int x, int y) {
+   660,838,176 ( 0.28%)      return (static_cast<std::int64_t>(x) << 32) ^
+ 1,484,288,244 ( 0.63%)             static_cast<std::uint32_t>(y);
+             .             }
+             .           
+             .             const std::vector<Point> &points_;
+             .             double cell_size_;
+             .             std::unordered_map<std::int64_t, std::vector<int>> cells_;
+             .           };
+             .           
+             .           static Transform2D estimate_rigid_transform(const std::vector<Match> &matches) {
+           135 ( 0.00%)    if (matches.empty()) {
+             .               throw std::runtime_error("No matches available for transform estimation");
+             .             }
+             .           
+           135 ( 0.00%)    Point cs{0.0, 0.0};
+           135 ( 0.00%)    Point ct{0.0, 0.0};
+    12,285,816 ( 0.01%)    for (const Match &m : matches) {
+     4,095,272 ( 0.00%)      cs.x += m.source.x;
+     4,095,272 ( 0.00%)      cs.y += m.source.y;
+     4,095,272 ( 0.00%)      ct.x += m.target.x;
+     4,095,272 ( 0.00%)      ct.y += m.target.y;
+             .             }
+             .           
+           225 ( 0.00%)    const double inv_n = 1.0 / static_cast<double>(matches.size());
+            45 ( 0.00%)    cs.x *= inv_n;
+            45 ( 0.00%)    cs.y *= inv_n;
+            45 ( 0.00%)    ct.x *= inv_n;
+            45 ( 0.00%)    ct.y *= inv_n;
+             .           
+            45 ( 0.00%)    double dot = 0.0;
+            45 ( 0.00%)    double cross = 0.0;
+    12,285,906 ( 0.01%)    for (const Match &m : matches) {
+     8,190,544 ( 0.00%)      const double sx = m.source.x - cs.x;
+     8,190,544 ( 0.00%)      const double sy = m.source.y - cs.y;
+     8,190,544 ( 0.00%)      const double tx = m.target.x - ct.x;
+     8,190,544 ( 0.00%)      const double ty = m.target.y - ct.y;
+    24,571,632 ( 0.01%)      dot += sx * tx + sy * ty;
+    16,381,088 ( 0.01%)      cross += sx * ty - sy * tx;
+             .             }
+             .           
+           450 ( 0.00%)    const double theta = std::atan2(cross, dot);
+         6,120 ( 0.00%)  => ???:0x0000000004003550 (45x)
+         4,140 ( 0.00%)  => ???:0x00000000040036f0 (45x)
+             .             const double c = std::cos(theta);
+             .             const double s = std::sin(theta);
+             .           
+           765 ( 0.00%)    return {theta, ct.x - (c * cs.x - s * cs.y),
+           495 ( 0.00%)            ct.y - (s * cs.x + c * cs.y)};
+             .           }
+             .           
+             .           static Point centroid_of(const std::vector<Point> &cloud) {
+             .             Point c{0.0, 0.0};
+    27,600,460 ( 0.01%)    for (const Point &p : cloud) {
+    18,400,000 ( 0.01%)      c.x += p.x;
+             .               c.y += p.y;
+             .             }
+           414 ( 0.00%)    const double inv_n = 1.0 / static_cast<double>(cloud.size());
+           276 ( 0.00%)    return {c.x * inv_n, c.y * inv_n};
+             .           }
+             .           
+             .           static double principal_axis_angle(const std::vector<Point> &cloud) {
+             .             const Point c = centroid_of(cloud);
+             .             double xx = 0.0;
+             .             double xy = 0.0;
+             .             double yy = 0.0;
+             .           
+-- line 348 ----------------------------------------
+-- line 355 ----------------------------------------
+             .             }
+             .           
+             .             return 0.5 * std::atan2(2.0 * xy, xx - yy);
+             .           }
+             .           
+             .           static double nearest_neighbor_mse(const GridIndex &index,
+             .                                              const std::vector<Point> &cloud) {
+             .             double sum = 0.0;
+             1 ( 0.00%)    std::size_t count = 0;
+       300,002 ( 0.00%)    for (const Point &p : cloud) {
+       200,007 ( 0.00%)      Point nearest_point{0.0, 0.0};
+       100,000 ( 0.00%)      double d2 = 0.0;
+       700,000 ( 0.00%)      if (index.nearest(p, nearest_point, d2)) {
+ 1,610,962,134 ( 0.68%)  => point_cloud_collimation.cpp:GridIndex::nearest(Point const&, Point&, double&) const (100,000x)
+       299,805 ( 0.00%)        sum += d2;
+        99,935 ( 0.00%)        ++count;
+             .               }
+             .             }
+             .           
+             5 ( 0.00%)    if (count == 0) {
+             .               return std::numeric_limits<double>::infinity();
+             .             }
+             .           
+             6 ( 0.00%)    return sum / static_cast<double>(count);
+             .           }
+             .           
+         1,104 ( 0.00%)  static std::vector<double> nearest_neighbor_distances(
+             .               const GridIndex &index, const std::vector<Point> &cloud,
+             .               double missing_distance) {
+             .             std::vector<double> distances;
+             .             distances.reserve(cloud.size());
+             .           
+    27,600,184 ( 0.01%)    for (const Point &p : cloud) {
+    18,400,000 ( 0.01%)      Point nearest_point{0.0, 0.0};
+     9,200,000 ( 0.00%)      double d2 = 0.0;
+    64,400,000 ( 0.03%)      if (index.nearest(p, nearest_point, d2)) {
+133,828,327,441 (56.37%)  => point_cloud_collimation.cpp:GridIndex::nearest(Point const&, Point&, double&) const (9,200,000x)
+    45,999,295 ( 0.02%)        distances.push_back(std::sqrt(d2));
+             .               } else {
+             .                 distances.push_back(missing_distance);
+             .               }
+             .             }
+             .           
+             .             return distances;
+         1,104 ( 0.00%)  }
+             .           
+         2,426 ( 0.00%)  static double percentile(std::vector<double> values, double q) {
+           184 ( 0.00%)    if (values.empty()) {
+             .               return std::numeric_limits<double>::infinity();
+             .             }
+             .           
+           184 ( 0.00%)    q = std::clamp(q, 0.0, 1.0);
+             .             const std::size_t index = static_cast<std::size_t>(
+         1,104 ( 0.00%)        std::lround(q * static_cast<double>(values.size() - 1)));
+         2,760 ( 0.00%)  => ???:0x0000000004003530 (92x)
+             .             std::nth_element(values.begin(), values.begin() + index, values.end());
+           268 ( 0.00%)    return values[index];
+           736 ( 0.00%)  }
+             .           
+             .           static double rmse_from_distances(const std::vector<double> &distances) {
+           414 ( 0.00%)    if (distances.empty()) {
+             .               return std::numeric_limits<double>::infinity();
+             .             }
+             .           
+           230 ( 0.00%)    double sum2 = 0.0;
+    73,600,000 ( 0.03%)    for (double d : distances) {
+    36,800,000 ( 0.02%)      sum2 += d * d;
+             .             }
+         1,012 ( 0.00%)    return std::sqrt(sum2 / static_cast<double>(distances.size()));
+             .           }
+             .           
+           598 ( 0.00%)  static ProfileMetrics compare_profiles(const std::vector<Point> &target,
+             .                                                  const std::vector<Point> &source,
+             .                                                  double coverage_threshold,
+             .                                                  double missing_distance) {
+           138 ( 0.00%)    GridIndex target_index(target, 90.0);
+   485,443,513 ( 0.20%)  => point_cloud_collimation.cpp:GridIndex::GridIndex(std::vector<Point, std::allocator<Point> > const&, double) (46x)
+           184 ( 0.00%)    GridIndex source_index(source, 90.0);
+   474,075,351 ( 0.20%)  => point_cloud_collimation.cpp:GridIndex::GridIndex(std::vector<Point, std::allocator<Point> > const&, double) (46x)
+             .           
+             .             std::vector<double> source_distances =
+           230 ( 0.00%)        nearest_neighbor_distances(target_index, source, missing_distance);
+69,134,747,551 (29.12%)  => point_cloud_collimation.cpp:nearest_neighbor_distances(GridIndex const&, std::vector<Point, std::allocator<Point> > const&, double) [clone .constprop.0] (46x)
+             .             std::vector<double> target_distances =
+           276 ( 0.00%)        nearest_neighbor_distances(source_index, target, missing_distance);
+64,923,612,506 (27.35%)  => point_cloud_collimation.cpp:nearest_neighbor_distances(GridIndex const&, std::vector<Point, std::allocator<Point> > const&, double) [clone .constprop.0] (46x)
+             .           
+             .             std::vector<double> all_distances = source_distances;
+             .             all_distances.insert(all_distances.end(), target_distances.begin(),
+             .                                  target_distances.end());
+             .           
+             .             const Point target_centroid = centroid_of(target);
+             .             const Point source_centroid = centroid_of(source);
+            92 ( 0.00%)    const double centroid_dx = target_centroid.x - source_centroid.x;
+            92 ( 0.00%)    const double centroid_dy = target_centroid.y - source_centroid.y;
+           138 ( 0.00%)    const double centroid_distance = std::hypot(centroid_dx, centroid_dy);
+         2,444 ( 0.00%)  => ???:0x00000000040035e0 (46x)
+             .           
+            92 ( 0.00%)    std::size_t covered = 0;
+    27,600,322 ( 0.01%)    for (double d : all_distances) {
+             .               if (d <= coverage_threshold) {
+    18,400,000 ( 0.01%)        ++covered;
+             .               }
+             .             }
+             .           
+             .             return {target_centroid,
+             .                     source_centroid,
+             .                     centroid_distance,
+             .                     rmse_from_distances(source_distances),
+             .                     rmse_from_distances(target_distances),
+             .                     rmse_from_distances(all_distances),
+           184 ( 0.00%)            percentile(all_distances, 0.50),
+   133,916,181 ( 0.06%)  => point_cloud_collimation.cpp:percentile(std::vector<double, std::allocator<double> >, double) (46x)
+           138 ( 0.00%)            percentile(all_distances, 0.95),
+   120,475,007 ( 0.05%)  => point_cloud_collimation.cpp:percentile(std::vector<double, std::allocator<double> >, double) (46x)
+             .                     *std::max_element(all_distances.begin(), all_distances.end()),
+           736 ( 0.00%)            static_cast<double>(covered) / static_cast<double>(all_distances.size())};
+           552 ( 0.00%)  }
+             .           
+             .           static double profile_score(const ProfileMetrics &metrics) {
+             .             const double canvas_diag = std::hypot(kCanvasWidth, kCanvasHeight);
+           138 ( 0.00%)    return (metrics.symmetric_chamfer_rmse + 0.25 * metrics.centroid_distance) /
+            92 ( 0.00%)           canvas_diag;
+             .           }
+             .           
+           184 ( 0.00%)  static void print_profile_metrics(const std::string &label,
+             .                                             const ProfileMetrics &metrics) {
+             .             std::cout << label << ": centroid_target=(" << metrics.target_centroid.x
+             .                       << ", " << metrics.target_centroid.y << ")"
+             .                       << " centroid_source=(" << metrics.source_centroid.x << ", "
+             .                       << metrics.source_centroid.y << ")"
+             .                       << " centroid_distance=" << metrics.centroid_distance
+             .                       << " rmse_s2t=" << metrics.source_to_target_rmse
+             .                       << " rmse_t2s=" << metrics.target_to_source_rmse
+             .                       << " chamfer_rmse=" << metrics.symmetric_chamfer_rmse
+             .                       << " median=" << metrics.median_distance
+             .                       << " p95=" << metrics.p95_distance
+             .                       << " max=" << metrics.max_distance
+            92 ( 0.00%)              << " coverage=" << metrics.coverage * 100.0 << "%\n";
+           138 ( 0.00%)  }
+             .           
+             .           [[maybe_unused]] static Transform2D
+             .           initial_pca_alignment(const std::vector<Point> &target,
+             .                                 const std::vector<Point> &source,
+             .                                 const GridIndex &index) {
+             .             const Point ct = centroid_of(target);
+             .             const Point cs = centroid_of(source);
+             .             const double target_angle = principal_axis_angle(target);
+-- line 492 ----------------------------------------
+-- line 511 ----------------------------------------
+             .               }
+             .             }
+             .           
+             .             return best;
+             .           }
+             .           
+             .           static IcpResult collimate_icp(const std::vector<Point> &target,
+             .                                          const std::vector<Point> &source,
+            12 ( 0.00%)                                 bool save_snapshots) {
+             .             const double match_threshold = 420.0;
+             .             const double convergence_threshold = VARIATION;
+             .             const double canvas_diag = std::hypot(kCanvasWidth, kCanvasHeight);
+             .             const double missing_distance = canvas_diag;
+             6 ( 0.00%)    GridIndex index(target, 90.0);
+    10,501,937 ( 0.00%)  => point_cloud_collimation.cpp:GridIndex::GridIndex(std::vector<Point, std::allocator<Point> > const&, double) (1x)
+             .             // Initial Transformation: = initial_pca_alignment(target, source, index);
+             .             // Disabled
+             4 ( 0.00%)    Transform2D total{};
+            11 ( 0.00%)    std::vector<Point> current = apply_transform(source, total);
+     7,100,458 ( 0.00%)  => point_cloud_collimation.cpp:apply_transform(std::vector<Point, std::allocator<Point> > const&, Transform2D const&) (1x)
+             .             std::vector<std::vector<Point>> snapshots;
+             .             std::vector<Transform2D> transforms;
+             .             std::vector<IterationMetrics> metrics_history;
+             .           
+             .             ProfileMetrics initial_metrics =
+             9 ( 0.00%)        compare_profiles(target, current, match_threshold, missing_distance);
+ 3,229,888,889 ( 1.36%)  => point_cloud_collimation.cpp:compare_profiles(std::vector<Point, std::allocator<Point> > const&, std::vector<Point, std::allocator<Point> > const&, double, double) [clone .constprop.0] (1x)
+             .             double previous_score = profile_score(initial_metrics);
+             .             double score = previous_score;
+             .             int iterations = 0;
+             .           
+             2 ( 0.00%)    if (save_snapshots) {
+             8 ( 0.00%)      snapshots.push_back(source);
+       184,711 ( 0.00%)  => /usr/include/c++/15/bits/stl_vector.h:std::vector<std::vector<Point, std::allocator<Point> >, std::allocator<std::vector<Point, std::allocator<Point> > > >::push_back(std::vector<Point, std::allocator<Point> > const&) (1x)
+             9 ( 0.00%)      snapshots.push_back(current);
+       176,590 ( 0.00%)  => /usr/include/c++/15/bits/stl_vector.h:std::vector<std::vector<Point, std::allocator<Point> >, std::allocator<std::vector<Point, std::allocator<Point> > > >::push_back(std::vector<Point, std::allocator<Point> > const&) (1x)
+             .               transforms.push_back({0.0, 0.0, 0.0});
+             .               transforms.push_back(total);
+             .             }
+             .           
+             3 ( 0.00%)    std::cout << "initial_transform theta_deg="
+           399 ( 0.00%)  => ???:0x00000000040037b0 (1x)
+             .                       << normalize_angle(total.theta) * 180.0 / kPi
+             6 ( 0.00%)              << " t=(" << total.tx << ", " << total.ty << ")"
+           559 ( 0.00%)  => ???:0x00000000040037b0 (2x)
+            10 ( 0.00%)              << " mse=" << nearest_neighbor_mse(index, current) << "\n";
+           998 ( 0.00%)  => ???:0x00000000040037b0 (3x)
+            15 ( 0.00%)    print_profile_metrics("initial_profile_metrics", initial_metrics);
+        41,429 ( 0.00%)  => point_cloud_collimation.cpp:print_profile_metrics(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, ProfileMetrics const&) [clone .isra.0] (1x)
+           139 ( 0.00%)  => /usr/include/c++/15/bits/basic_string.h:std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) (1x)
+            39 ( 0.00%)    metrics_history.push_back(
+             .                 {0, 0, total, initial_metrics, 0.0, score, 0.0, 0.0});
+             .           
+           151 ( 0.00%)    for (int iter = 1; iter <= 80; ++iter) {
+             .               std::vector<Match> matches;
+             .               matches.reserve(current.size());
+             .               double distance_sum = 0.0;
+             .           
+    13,500,315 ( 0.01%)      for (const Point &p : current) {
+             .                 Point nearest_point{0.0, 0.0};
+     4,500,000 ( 0.00%)        double d2 = 0.0;
+    62,190,121 ( 0.03%)        if (index.nearest(p, nearest_point, d2) &&
+67,327,655,382 (28.36%)  => point_cloud_collimation.cpp:GridIndex::nearest(Point const&, Point&, double&) const (4,500,000x)
+     4,499,859 ( 0.00%)            d2 < match_threshold * match_threshold) {
+     8,190,544 ( 0.00%)          matches.push_back({p, nearest_point, d2});
+     8,190,544 ( 0.00%)          distance_sum += d2;
+             .                 }
+             .               }
+             .           
+           180 ( 0.00%)      if (matches.size() < current.size() / 2) {
+             .                 throw std::runtime_error("Too few nearest-neighbor matches");
+             .               }
+             .           
+             .               const Transform2D delta = estimate_rigid_transform(matches);
+           176 ( 0.00%)      total = compose(delta, total);
+           180 ( 0.00%)      current = apply_transform(current, delta);
+   549,018,685 ( 0.23%)  => point_cloud_collimation.cpp:apply_transform(std::vector<Point, std::allocator<Point> > const&, Transform2D const&) (45x)
+            45 ( 0.00%)      const double match_rmse =
+           270 ( 0.00%)          std::sqrt(distance_sum / static_cast<double>(matches.size()));
+             .               const ProfileMetrics metrics =
+           270 ( 0.00%)          compare_profiles(target, current, match_threshold, missing_distance);
+132,468,558,333 (55.80%)  => point_cloud_collimation.cpp:compare_profiles(std::vector<Point, std::allocator<Point> > const&, std::vector<Point, std::allocator<Point> > const&, double, double) [clone .constprop.0] (45x)
+             .               score = profile_score(metrics);
+             .           
+             .               const double score_variation =
+           360 ( 0.00%)          std::abs(previous_score - score) / std::max(previous_score, 1.0e-12);
+             .               const double transform_step =
+           225 ( 0.00%)          (std::hypot(delta.tx, delta.ty) +
+         2,340 ( 0.00%)  => ???:0x00000000040035e0 (45x)
+           135 ( 0.00%)           std::abs(delta.theta) * canvas_diag * 0.5) /
+           135 ( 0.00%)          canvas_diag;
+             .           
+             .               std::cout << "iter=" << std::setw(2) << iter
+           180 ( 0.00%)                << " matches=" << std::setw(5) << matches.size()
+        23,604 ( 0.00%)  => ???:0x0000000004003990 (45x)
+             .                         << " match_rmse=" << std::fixed << std::setprecision(8)
+             .                         << match_rmse
+             .                         << " profile_score=" << score
+           135 ( 0.00%)                << " score_variation=" << score_variation * 100.0
+           135 ( 0.00%)                << "% transform_step=" << transform_step * 100.0
+           180 ( 0.00%)                << "% delta_theta_deg=" << delta.theta * 180.0 / kPi
+             .                         << " delta_t=(" << delta.tx << ", " << delta.ty << ")\n";
+           180 ( 0.00%)      print_profile_metrics("  profile_metrics", metrics);
+     2,033,567 ( 0.00%)  => point_cloud_collimation.cpp:print_profile_metrics(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, ProfileMetrics const&) [clone .isra.0] (45x)
+           585 ( 0.00%)      metrics_history.push_back({iter, matches.size(), total, metrics, match_rmse,
+             .                                          score, score_variation, transform_step});
+             .           
+             .               iterations = iter;
+           233 ( 0.00%)      if (iter >= 3 && score_variation < convergence_threshold &&
+             .                   transform_step < convergence_threshold) {
+             .                 break;
+             .               }
+             .           
+             .               previous_score = score;
+           260 ( 0.00%)      if (save_snapshots && (iter % 2 == 0 || iter < 8)) {
+             .                 snapshots.push_back(current);
+             .                 transforms.push_back(total);
+             .               }
+             .             }
+             .           
+             2 ( 0.00%)    if (save_snapshots) {
+            18 ( 0.00%)      snapshots.push_back(current);
+       186,978 ( 0.00%)  => /usr/include/c++/15/bits/stl_vector.h:std::vector<std::vector<Point, std::allocator<Point> >, std::allocator<std::vector<Point, std::allocator<Point> > > >::push_back(std::vector<Point, std::allocator<Point> > const&) (1x)
+             .               transforms.push_back(total);
+             .             }
+             .           
+             .             return {total, current, snapshots, transforms, metrics_history, iterations,
+             .                     score};
+            28 ( 0.00%)  }
+         5,330 ( 0.00%)  => /usr/include/c++/15/bits/stl_vector.h:std::vector<std::vector<Point, std::allocator<Point> >, std::allocator<std::vector<Point, std::allocator<Point> > > >::~vector() (1x)
+             .           
+             .           static void plot_point(std::vector<unsigned char> &rgb, int width, int height,
+             .                                  int x, int y, unsigned char r, unsigned char g,
+             .                                  unsigned char b) {
+   186,359,948 ( 0.08%)    if (x < 0 || y < 0 || x >= width || y >= height) {
+             .               return;
+             .             }
+             .           
+    46,679,974 ( 0.02%)    const std::size_t offset =
+   232,859,948 ( 0.10%)        static_cast<std::size_t>((height - 1 - y) * width + x) * 3;
+    93,359,948 ( 0.04%)    rgb[offset + 0] = r;
+   139,859,948 ( 0.06%)    rgb[offset + 1] = g;
+    93,359,948 ( 0.04%)    rgb[offset + 2] = b;
+             .           }
+             .           
+         3,720 ( 0.00%)  static void draw_cloud(std::vector<unsigned char> &rgb,
+             .                                  const std::vector<Point> &cloud, int width, int height,
+             .                                  unsigned char r, unsigned char g, unsigned char b) {
+   139,503,255 ( 0.06%)    for (const Point &p : cloud) {
+             .               const int x = static_cast<int>(
+   232,500,000 ( 0.10%)          std::lround((p.x / kCanvasWidth) * static_cast<double>(width - 1)));
+ 1,395,000,000 ( 0.59%)  => ???:0x0000000004003530 (46,500,000x)
+             .               const int y = static_cast<int>(
+   232,500,000 ( 0.10%)          std::lround((p.y / kCanvasHeight) * static_cast<double>(height - 1)));
+ 1,395,000,000 ( 0.59%)  => ???:0x0000000004003530 (46,500,000x)
+             .               plot_point(rgb, width, height, x, y, r, g, b);
+             .             }
+         3,720 ( 0.00%)  }
+             .           
+           348 ( 0.00%)  static void draw_rect(std::vector<unsigned char> &rgb, int width, int height,
+             .                                 int x0, int y0, int x1, int y1, unsigned char r,
+             .                                 unsigned char g, unsigned char b) {
+         9,570 ( 0.00%)    for (int y = y0; y <= y1; ++y) {
+       550,594 ( 0.00%)      for (int x = x0; x <= x1; ++x) {
+             .                 plot_point(rgb, width, height, x, y, r, g, b);
+             .               }
+             .             }
+           348 ( 0.00%)  }
+             .           
+             .           static void draw_viewer_overlay(std::vector<unsigned char> &rgb, int width,
+             .                                           int height, std::size_t frame_index,
+             .                                           std::size_t frame_count) {
+             .             const int x0 = 24;
+             .             const int y0 = height - 46;
+             .             const int bar_width = 240;
+             .             const int bar_height = 12;
+            29 ( 0.00%)    const double progress =
+             .                 frame_count > 1
+           261 ( 0.00%)            ? static_cast<double>(frame_index) / static_cast<double>(frame_count - 1)
+             .                     : 1.0;
+            87 ( 0.00%)    const int filled = static_cast<int>(std::lround(progress * bar_width));
+           859 ( 0.00%)  => ???:0x0000000004003530 (29x)
+             .           
+           261 ( 0.00%)    draw_rect(rgb, width, height, x0, y0, x0 + bar_width, y0 + bar_height, 235,
+     1,275,217 ( 0.00%)  => point_cloud_collimation.cpp:draw_rect(std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, int, int, int, int, unsigned char, unsigned char, unsigned char) [clone .constprop.0] (29x)
+             .                       235, 235);
+           203 ( 0.00%)    draw_rect(rgb, width, height, x0, y0, x0 + filled, y0 + bar_height, 40, 170,
+       641,857 ( 0.00%)  => point_cloud_collimation.cpp:draw_rect(std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, int, int, int, int, unsigned char, unsigned char, unsigned char) [clone .constprop.0] (29x)
+             .                       80);
+             .           
+           203 ( 0.00%)    draw_rect(rgb, width, height, 24, 24, 48, 38, 50, 90, 210);
+       155,875 ( 0.00%)  => point_cloud_collimation.cpp:draw_rect(std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, int, int, int, int, unsigned char, unsigned char, unsigned char) [clone .constprop.0] (29x)
+           203 ( 0.00%)    draw_rect(rgb, width, height, 24, 46, 48, 60, 230, 120, 90);
+       155,875 ( 0.00%)  => point_cloud_collimation.cpp:draw_rect(std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, int, int, int, int, unsigned char, unsigned char, unsigned char) [clone .constprop.0] (29x)
+           203 ( 0.00%)    draw_rect(rgb, width, height, 24, 68, 48, 82, 170, 205, 170);
+       155,875 ( 0.00%)  => point_cloud_collimation.cpp:draw_rect(std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, int, int, int, int, unsigned char, unsigned char, unsigned char) [clone .constprop.0] (29x)
+           203 ( 0.00%)    draw_rect(rgb, width, height, 24, 90, 48, 104, 40, 170, 80);
+       155,875 ( 0.00%)  => point_cloud_collimation.cpp:draw_rect(std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, int, int, int, int, unsigned char, unsigned char, unsigned char) [clone .constprop.0] (29x)
+             .           }
+             .           
+           348 ( 0.00%)  static std::vector<unsigned char> render_motion_frame(
+             .               const std::vector<Point> &target, const std::vector<Point> &source,
+             .               const std::vector<std::vector<Point>> &frames, std::size_t frame_index,
+             .               int width, int height) {
+             .             std::vector<unsigned char> rgb(static_cast<std::size_t>(width * height * 3),
+             .                                            255);
+             .           
+           203 ( 0.00%)    draw_cloud(rgb, source, width, height, 230, 120, 90);
+   261,000,725 ( 0.11%)  => point_cloud_collimation.cpp:draw_cloud(std::vector<unsigned char, std::allocator<unsigned char> >&, std::vector<Point, std::allocator<Point> > const&, int, int, unsigned char, unsigned char, unsigned char) [clone .constprop.0] (29x)
+           203 ( 0.00%)    draw_cloud(rgb, target, width, height, 50, 90, 210);
+   261,000,725 ( 0.11%)  => point_cloud_collimation.cpp:draw_cloud(std::vector<unsigned char, std::allocator<unsigned char> >&, std::vector<Point, std::allocator<Point> > const&, int, int, unsigned char, unsigned char, unsigned char) [clone .constprop.0] (29x)
+             .           
+         1,950 ( 0.00%)    for (std::size_t i = 1; i < frame_index && i < frames.size(); ++i) {
+             .               const unsigned char shade =
+           756 ( 0.00%)          static_cast<unsigned char>(205 - std::min<std::size_t>(i * 10, 55));
+         1,890 ( 0.00%)      draw_cloud(rgb, frames[i], width, height, 170, shade, 170);
+ 3,402,009,450 ( 1.43%)  => point_cloud_collimation.cpp:draw_cloud(std::vector<unsigned char, std::allocator<unsigned char> >&, std::vector<Point, std::allocator<Point> > const&, int, int, unsigned char, unsigned char, unsigned char) [clone .constprop.0] (378x)
+             .             }
+             .           
+           145 ( 0.00%)    draw_cloud(rgb, frames[frame_index], width, height, 40, 170, 80);
+   261,000,725 ( 0.11%)  => point_cloud_collimation.cpp:draw_cloud(std::vector<unsigned char, std::allocator<unsigned char> >&, std::vector<Point, std::allocator<Point> > const&, int, int, unsigned char, unsigned char, unsigned char) [clone .constprop.0] (29x)
+             .             draw_viewer_overlay(rgb, width, height, frame_index, frames.size());
+             .             return rgb;
+           261 ( 0.00%)  }
+             .           
+             .           static void write_cloud_csv(const std::filesystem::path &path,
+             .                                       const std::vector<Point> &cloud,
+           384 ( 0.00%)                              const std::string &label) {
+             .             std::ofstream out(path);
+            64 ( 0.00%)    if (!out) {
+             .               throw std::runtime_error("Could not write " + path.string());
+             .             }
+             .           
+             .             out << "label,index,x,y\n";
+             .             out << std::fixed << std::setprecision(10);
+     9,600,096 ( 0.00%)    for (std::size_t i = 0; i < cloud.size(); ++i) {
+     9,600,000 ( 0.00%)      out << label << "," << i << "," << cloud[i].x << "," << cloud[i].y
+             .                   << "\n";
+             .             }
+           352 ( 0.00%)  }
+             .           
+             .           static void write_transform_csv(const std::filesystem::path &path,
+             .                                           const std::vector<Transform2D> &transforms) {
+             .             std::ofstream out(path);
+             2 ( 0.00%)    if (!out) {
+             .               throw std::runtime_error("Could not write " + path.string());
+             .             }
+             .           
+             3 ( 0.00%)    out << "frame,theta_rad,theta_deg,tx,ty\n";
+           289 ( 0.00%)  => ???:0x00000000040037b0 (1x)
+             .             out << std::fixed << std::setprecision(10);
+            92 ( 0.00%)    for (std::size_t i = 0; i < transforms.size(); ++i) {
+             .               out << i << "," << transforms[i].theta << ","
+            87 ( 0.00%)          << normalize_angle(transforms[i].theta) * 180.0 / kPi << ","
+             .                   << transforms[i].tx
+             .                   << "," << transforms[i].ty << "\n";
+             .             }
+             2 ( 0.00%)  }
+         3,695 ( 0.00%)  => ???:0x00000000040038c0 (1x)
+             .           
+             .           static void write_metrics_csv(
+             .               const std::filesystem::path &path,
+             9 ( 0.00%)      const std::vector<IterationMetrics> &metrics_history) {
+             .             std::ofstream out(path);
+             2 ( 0.00%)    if (!out) {
+             .               throw std::runtime_error("Could not write " + path.string());
+             .             }
+             .           
+             .             out << "iteration,matches,theta_deg,tx,ty,target_centroid_x,"
+             .                 << "target_centroid_y,source_centroid_x,source_centroid_y,"
+             .                 << "centroid_distance,rmse_source_to_target,rmse_target_to_source,"
+             .                 << "symmetric_chamfer_rmse,median_distance,p95_distance,max_distance,"
+            15 ( 0.00%)        << "coverage,match_rmse,profile_score,score_variation,transform_step\n";
+         1,194 ( 0.00%)  => ???:0x00000000040037b0 (5x)
+             .             out << std::fixed << std::setprecision(10);
+             .           
+           141 ( 0.00%)    for (const IterationMetrics &row : metrics_history) {
+           184 ( 0.00%)      out << row.iteration << "," << row.matches << ","
+        16,367 ( 0.00%)  => ???:0x0000000004003990 (46x)
+           138 ( 0.00%)          << normalize_angle(row.transform.theta) * 180.0 / kPi << ","
+             .                   << row.transform.tx << "," << row.transform.ty << ","
+             .                   << row.profile.target_centroid.x << ","
+             .                   << row.profile.target_centroid.y << ","
+             .                   << row.profile.source_centroid.x << ","
+             .                   << row.profile.source_centroid.y << ","
+             .                   << row.profile.centroid_distance << ","
+             .                   << row.profile.source_to_target_rmse << ","
+             .                   << row.profile.target_to_source_rmse << ","
+             .                   << row.profile.symmetric_chamfer_rmse << ","
+             .                   << row.profile.median_distance << "," << row.profile.p95_distance
+             .                   << "," << row.profile.max_distance << "," << row.profile.coverage
+             .                   << "," << row.match_rmse << "," << row.profile_score << ","
+             .                   << row.score_variation << "," << row.transform_step << "\n";
+             .             }
+            11 ( 0.00%)  }
+           958 ( 0.00%)  => ???:0x00000000040038c0 (1x)
+             .           
+             .           static void write_ppm(const std::filesystem::path &path,
+             .                                 const std::vector<unsigned char> &rgb, int width,
+             .                                 int height) {
+             .             std::ofstream out(path, std::ios::binary);
+            58 ( 0.00%)    if (!out) {
+             .               throw std::runtime_error("Could not write " + path.string());
+             .             }
+             .           
+           203 ( 0.00%)    out << "P6\n" << width << " " << height << "\n255\n";
+        21,576 ( 0.00%)  => ???:0x0000000004003990 (58x)
+            87 ( 0.00%)    out.write(reinterpret_cast<const char *>(rgb.data()),
+         6,670 ( 0.00%)  => ???:0x0000000004003860 (29x)
+             .                       static_cast<std::streamsize>(rgb.size()));
+             .           }
+             .           
+             .           static void export_reconstruction(
+             .               const std::filesystem::path &output_dir, const std::vector<Point> &target,
+             .               const std::vector<Point> &source, const IcpResult &result) {
+             .             const int width = 960;
+             .             const int height = 720;
+             .           
+             4 ( 0.00%)    std::filesystem::create_directories(output_dir);
+         4,245 ( 0.00%)  => ???:0x0000000004003700 (1x)
+            17 ( 0.00%)    write_cloud_csv(output_dir / "target_profile.csv", target, "target");
+   859,766,574 ( 0.36%)  => point_cloud_collimation.cpp:write_cloud_csv(std::filesystem::__cxx11::path const&, std::vector<Point, std::allocator<Point> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (1x)
+         7,303 ( 0.00%)  => /usr/include/c++/15/bits/fs_path.h:std::filesystem::__cxx11::operator/(std::filesystem::__cxx11::path const&, std::filesystem::__cxx11::path const&) (1x)
+            74 ( 0.00%)  => /usr/include/c++/15/bits/basic_string.h:std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) (1x)
+            10 ( 0.00%)    write_cloud_csv(output_dir / "source_initial_profile.csv", source,
+   858,660,047 ( 0.36%)  => point_cloud_collimation.cpp:write_cloud_csv(std::filesystem::__cxx11::path const&, std::vector<Point, std::allocator<Point> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (1x)
+           722 ( 0.00%)  => /usr/include/c++/15/bits/fs_path.h:std::filesystem::__cxx11::operator/(std::filesystem::__cxx11::path const&, std::filesystem::__cxx11::path const&) (1x)
+             4 ( 0.00%)                    "source_initial");
+            72 ( 0.00%)  => /usr/include/c++/15/bits/basic_string.h:std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) (1x)
+            10 ( 0.00%)    write_cloud_csv(output_dir / "source_final_profile.csv", result.aligned,
+   858,279,205 ( 0.36%)  => point_cloud_collimation.cpp:write_cloud_csv(std::filesystem::__cxx11::path const&, std::vector<Point, std::allocator<Point> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (1x)
+           722 ( 0.00%)  => /usr/include/c++/15/bits/fs_path.h:std::filesystem::__cxx11::operator/(std::filesystem::__cxx11::path const&, std::filesystem::__cxx11::path const&) (1x)
+             4 ( 0.00%)                    "source_final");
+            72 ( 0.00%)  => /usr/include/c++/15/bits/basic_string.h:std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) (1x)
+             4 ( 0.00%)    write_transform_csv(output_dir / "source_motion.csv", result.transforms);
+           722 ( 0.00%)  => /usr/include/c++/15/bits/fs_path.h:std::filesystem::__cxx11::operator/(std::filesystem::__cxx11::path const&, std::filesystem::__cxx11::path const&) (1x)
+             9 ( 0.00%)    write_metrics_csv(output_dir / "profile_metrics.csv",
+     3,005,245 ( 0.00%)  => point_cloud_collimation.cpp:write_metrics_csv(std::filesystem::__cxx11::path const&, std::vector<IterationMetrics, std::allocator<IterationMetrics> > const&) (1x)
+           722 ( 0.00%)  => /usr/include/c++/15/bits/fs_path.h:std::filesystem::__cxx11::operator/(std::filesystem::__cxx11::path const&, std::filesystem::__cxx11::path const&) (1x)
+             .                               result.metrics_history);
+             .           
+           150 ( 0.00%)    for (std::size_t i = 0; i < result.snapshots.size(); ++i) {
+             .               std::ostringstream name;
+             .               name << "frame_" << std::setw(3) << std::setfill('0') << i << ".ppm";
+           116 ( 0.00%)      write_cloud_csv(output_dir / ("source_frame_" + name.str().substr(6, 3) +
+24,898,064,687 (10.49%)  => point_cloud_collimation.cpp:write_cloud_csv(std::filesystem::__cxx11::path const&, std::vector<Point, std::allocator<Point> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (29x)
+             .                                             ".csv"),
+             .                               result.snapshots[i], "source_frame");
+             .               write_ppm(output_dir / name.str(),
+           348 ( 0.00%)                render_motion_frame(target, source, result.snapshots, i, width,
+ 4,190,865,696 ( 1.77%)  => point_cloud_collimation.cpp:render_motion_frame(std::vector<Point, std::allocator<Point> > const&, std::vector<Point, std::allocator<Point> > const&, std::vector<std::vector<Point, std::allocator<Point> >, std::allocator<std::vector<Point, std::allocator<Point> > > > const&, unsigned long, int, int) [clone .constprop.0] (29x)
+             .                                             height),
+             .                         width, height);
+             .             }
+             .           
+             7 ( 0.00%)    std::cout << "Exported reconstruction to " << output_dir << "\n";
+           835 ( 0.00%)  => ???:0x00000000040037b0 (2x)
+             3 ( 0.00%)    std::cout << "  target_profile.csv: fixed reference profile\n";
+           445 ( 0.00%)  => ???:0x00000000040037b0 (1x)
+             3 ( 0.00%)    std::cout << "  source_initial_profile.csv: displaced/rotated source\n";
+           449 ( 0.00%)  => ???:0x00000000040037b0 (1x)
+             3 ( 0.00%)    std::cout << "  source_frame_*.csv and frame_*.ppm: source motion by step\n";
+           449 ( 0.00%)  => ???:0x00000000040037b0 (1x)
+             3 ( 0.00%)    std::cout << "  source_motion.csv: accumulated rotation and translation\n";
+           449 ( 0.00%)  => ???:0x00000000040037b0 (1x)
+             4 ( 0.00%)    std::cout << "  profile_metrics.csv: centroid and profile-distance metrics\n";
+           449 ( 0.00%)  => ???:0x00000000040037b0 (1x)
+             .           }
+             .           
+             .           static void show_with_gstreamer(const std::vector<Point> &target,
+             .                                           const std::vector<Point> &source,
+             .                                           const std::vector<std::vector<Point>> &frames) {
+             .             const int width = 960;
+             .             const int height = 720;
+             .             const int fps = 5;
+-- line 826 ----------------------------------------
+-- line 872 ----------------------------------------
+             .           
+             .             gst_app_src_end_of_stream(GST_APP_SRC(appsrc));
+             .             std::this_thread::sleep_for(std::chrono::seconds(3));
+             .             gst_element_set_state(pipeline, GST_STATE_NULL);
+             .             gst_object_unref(appsrc);
+             .             gst_object_unref(pipeline);
+             .           }
+             .           
+             6 ( 0.00%)  static void print_transform(const std::string &label, const Transform2D &t) {
+            12 ( 0.00%)    std::cout << label << ": theta=" << std::fixed << std::setprecision(5)
+           903 ( 0.00%)  => ???:0x00000000040037b0 (3x)
+            18 ( 0.00%)              << normalize_angle(t.theta) * 180.0 / kPi << " deg, tx=" << t.tx
+           918 ( 0.00%)  => ???:0x00000000040037b0 (3x)
+            18 ( 0.00%)              << ", ty=" << t.ty << "\n";
+         2,187 ( 0.00%)  => ???:0x00000000040037b0 (6x)
+             3 ( 0.00%)  }
+             .           
+            17 ( 0.00%)  int main(int argc, char **argv) {
+             2 ( 0.00%)    bool viewer = false;
+             1 ( 0.00%)    bool export_outputs = false;
+             3 ( 0.00%)    double deformation_amplitude = 60.0;
+             .             std::filesystem::path output_dir = "reconstruction";
+             7 ( 0.00%)    for (int i = 1; i < argc; ++i) {
+             2 ( 0.00%)      const std::string arg = argv[i];
+             .               if (arg == "--viewer") {
+             .                 viewer = true;
+             .               } else if (arg == "--export") {
+             1 ( 0.00%)        export_outputs = true;
+             .               } else if (arg == "--deformation" && i + 1 < argc) {
+             .                 deformation_amplitude = std::stod(argv[++i]);
+             .               } else if (arg == "--no-deformation") {
+             .                 deformation_amplitude = 0.0;
+             .               } else if (arg == "--output" && i + 1 < argc) {
+             .                 output_dir = argv[++i];
+             .                 export_outputs = true;
+             .               } else {
+-- line 904 ----------------------------------------
+-- line 910 ----------------------------------------
+             .             }
+             .           
+             .             try {
+             .               const std::size_t points_per_cloud = POINTS_PER_CLOUD;
+             .               const Transform2D target_to_source =
+             .                   transform_about_canvas_center(18.0 * kPi / 180.0, 620.0, -430.0);
+             .           
+             .               std::vector<Point> target = generate_h_rail_cloud(points_per_cloud, 7);
+            11 ( 0.00%)      std::vector<Point> source = apply_transform(target, target_to_source);
+    13,500,367 ( 0.01%)  => point_cloud_collimation.cpp:apply_transform(std::vector<Point, std::allocator<Point> > const&, Transform2D const&) (1x)
+             .               const double deformation_rms =
+             .                   add_random_deformation(source, deformation_amplitude, 31);
+             .           
+             .               std::mt19937 rng(23);
+             .               std::normal_distribution<double> sensor_noise(0.0, 10.0);
+       300,005 ( 0.00%)      for (Point &p : source) {
+       700,000 ( 0.00%)        p.x = std::clamp(p.x + sensor_noise(rng), 0.0, kCanvasWidth);
+     1,900,000 ( 0.00%)        p.y = std::clamp(p.y + sensor_noise(rng), 0.0, kCanvasHeight);
+             .               }
+             .           
+             7 ( 0.00%)      std::cout << "Generated two H-shaped rail point clouds with "
+         6,996 ( 0.00%)  => ???:0x00000000040037b0 (1x)
+             6 ( 0.00%)                << points_per_cloud << " points each.\n";
+           438 ( 0.00%)  => ???:0x00000000040037b0 (1x)
+            13 ( 0.00%)      std::cout << "Canvas: " << kCanvasWidth << " x " << kCanvasHeight
+           582 ( 0.00%)  => ???:0x00000000040037b0 (2x)
+             6 ( 0.00%)                << " coordinate units\n";
+           436 ( 0.00%)  => ???:0x00000000040037b0 (1x)
+             6 ( 0.00%)      std::cout << "Applied random non-rigid source deformation: amplitude="
+           543 ( 0.00%)  => ???:0x00000000040037b0 (1x)
+             6 ( 0.00%)                << deformation_amplitude << " units, rms=" << deformation_rms
+           321 ( 0.00%)  => ???:0x00000000040037b0 (1x)
+             6 ( 0.00%)                << " units\n";
+           440 ( 0.00%)  => ???:0x00000000040037b0 (1x)
+            10 ( 0.00%)      print_transform("Synthetic target->source transform", target_to_source);
+        10,623 ( 0.00%)  => point_cloud_collimation.cpp:print_transform(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Transform2D const&) [clone .isra.0] (1x)
+           962 ( 0.00%)  => /usr/include/c++/15/bits/basic_string.h:std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) (1x)
+             3 ( 0.00%)      std::cout << "Collimating source cloud onto target cloud...\n";
+           445 ( 0.00%)  => ???:0x00000000040037b0 (1x)
+             .           
+            15 ( 0.00%)      IcpResult result = collimate_icp(target, source, viewer || export_outputs);
+205,468,371,041 (86.54%)  => point_cloud_collimation.cpp:collimate_icp(std::vector<Point, std::allocator<Point> > const&, std::vector<Point, std::allocator<Point> > const&, bool) (1x)
+             .               const Transform2D expected_source_to_target =
+             .                   inverse_transform(target_to_source);
+             .           
+            10 ( 0.00%)      print_transform("Expected source->target transform",
+        10,732 ( 0.00%)  => point_cloud_collimation.cpp:print_transform(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Transform2D const&) [clone .isra.0] (1x)
+           148 ( 0.00%)  => /usr/include/c++/15/bits/basic_string.h:std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) (1x)
+             .                               expected_source_to_target);
+            12 ( 0.00%)      print_transform("Recovered source->target transform",
+        10,885 ( 0.00%)  => point_cloud_collimation.cpp:print_transform(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Transform2D const&) [clone .isra.0] (1x)
+           148 ( 0.00%)  => /usr/include/c++/15/bits/basic_string.h:std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) (1x)
+             .                               result.source_to_target);
+             3 ( 0.00%)      std::cout << "Finished after " << result.iterations
+           336 ( 0.00%)  => ???:0x00000000040037b0 (1x)
+             7 ( 0.00%)                << " iterations with profile_score=" << std::fixed
+           421 ( 0.00%)  => ???:0x0000000004003990 (1x)
+           414 ( 0.00%)  => ???:0x00000000040037b0 (1x)
+             3 ( 0.00%)                << std::setprecision(8) << result.score << "\n";
+           441 ( 0.00%)  => ???:0x00000000040037b0 (1x)
+             .           
+             2 ( 0.00%)      if (export_outputs) {
+             .                 export_reconstruction(output_dir, target, source, result);
+             .               }
+             .           
+             2 ( 0.00%)      if (viewer) {
+             .                 std::cout << "Opening GStreamer viewer: blue=target, red=initial source, "
+             .                              "green=aligned source.\n";
+             .                 show_with_gstreamer(target, source, result.snapshots);
+             .               }
+             6 ( 0.00%)    } catch (const std::exception &ex) {
+         5,608 ( 0.00%)  => point_cloud_collimation.cpp:IcpResult::~IcpResult() (1x)
+             .               std::cerr << "error: " << ex.what() << "\n";
+             .               return EXIT_FAILURE;
+             .             }
+             .           
+             2 ( 0.00%)    return EXIT_SUCCESS;
+            12 ( 0.00%)  }
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /usr/include/c++/15/bits/stl_algo.h
+--------------------------------------------------------------------------------
+Ir                  
+
+-- line 83 ----------------------------------------
+         .           
+         .             /// Swaps the median value of *__a, *__b and *__c under __comp to *__result
+         .             template<typename _Iterator, typename _Compare>
+         .               _GLIBCXX20_CONSTEXPR
+         .               void
+         .               __move_median_to_first(_Iterator __result,_Iterator __a, _Iterator __b,
+         .           			   _Iterator __c, _Compare __comp)
+         .               {
+     5,346 ( 0.00%)        if (__comp(__a, __b))
+         .           	{
+     1,884 ( 0.00%)  	  if (__comp(__b, __c))
+         .           	    std::iter_swap(__result, __b);
+     1,014 ( 0.00%)  	  else if (__comp(__a, __c))
+         .           	    std::iter_swap(__result, __c);
+         .           	  else
+         .           	    std::iter_swap(__result, __a);
+         .           	}
+     1,680 ( 0.00%)        else if (__comp(__a, __c))
+         .           	std::iter_swap(__result, __a);
+       936 ( 0.00%)        else if (__comp(__b, __c))
+         .           	std::iter_swap(__result, __c);
+         .                 else
+         .           	std::iter_swap(__result, __b);
+         .               }
+         .           
+         .             /// Provided for stable_partition to use.
+         .             template<typename _InputIterator, typename _Predicate>
+         .               _GLIBCXX20_CONSTEXPR
+-- line 110 ----------------------------------------
+-- line 1750 ----------------------------------------
+         .               void
+         .               __unguarded_linear_insert(_RandomAccessIterator __last,
+         .           			      _Compare __comp)
+         .               {
+         .                 typename iterator_traits<_RandomAccessIterator>::value_type
+         .           	__val = _GLIBCXX_MOVE(*__last);
+         .                 _RandomAccessIterator __next = __last;
+         .                 --__next;
+       184 ( 0.00%)        while (__comp(__val, __next))
+         .           	{
+        16 ( 0.00%)  	  *__last = _GLIBCXX_MOVE(*__next);
+         .           	  __last = __next;
+         .           	  --__next;
+         .           	}
+        52 ( 0.00%)        *__last = _GLIBCXX_MOVE(__val);
+         .               }
+         .           
+         .             /// This is a helper function for the sort routine.
+         .             template<typename _RandomAccessIterator, typename _Compare>
+         .               _GLIBCXX20_CONSTEXPR
+         .               void
+         .               __insertion_sort(_RandomAccessIterator __first,
+         .           		     _RandomAccessIterator __last, _Compare __comp)
+         .               {
+       184 ( 0.00%)        if (__first == __last) return;
+         .           
+       582 ( 0.00%)        for (_RandomAccessIterator __i = __first + 1; __i != __last; ++__i)
+         .           	{
+       260 ( 0.00%)  	  if (__comp(__i, __first))
+         .           	    {
+         .           	      typename iterator_traits<_RandomAccessIterator>::value_type
+         .           		__val = _GLIBCXX_MOVE(*__i);
+         .           	      _GLIBCXX_MOVE_BACKWARD3(__first, __i, __i + 1);
+        78 ( 0.00%)  	      *__first = _GLIBCXX_MOVE(__val);
+         .           	    }
+         .           	  else
+         .           	    std::__unguarded_linear_insert(__i,
+         .           				__gnu_cxx::__ops::__val_comp_iter(__comp));
+         .           	}
+         .               }
+         .           
+         .             /// This is a helper function for the sort routine.
+-- line 1791 ----------------------------------------
+-- line 1828 ----------------------------------------
+         .               _GLIBCXX20_CONSTEXPR
+         .               _RandomAccessIterator
+         .               __unguarded_partition(_RandomAccessIterator __first,
+         .           			  _RandomAccessIterator __last,
+         .           			  _RandomAccessIterator __pivot, _Compare __comp)
+         .               {
+         .                 while (true)
+         .           	{
+55,951,489 ( 0.02%)  	  while (__comp(__first, __pivot))
+         .           	    ++__first;
+         .           	  --__last;
+66,623,095 ( 0.03%)  	  while (__comp(__pivot, __last))
+         .           	    --__last;
+18,810,450 ( 0.01%)  	  if (!(__first < __last))
+         .           	    return __first;
+         .           	  std::iter_swap(__first, __last);
+         .           	  ++__first;
+         .           	}
+         .               }
+         .           
+         .             /// This is a helper function...
+         .             template<typename _RandomAccessIterator, typename _Compare>
+         .               _GLIBCXX20_CONSTEXPR
+         .               inline _RandomAccessIterator
+         .               __unguarded_partition_pivot(_RandomAccessIterator __first,
+         .           				_RandomAccessIterator __last, _Compare __comp)
+         .               {
+     1,782 ( 0.00%)        _RandomAccessIterator __mid = __first + (__last - __first) / 2;
+         .                 std::__move_median_to_first(__first, __first + 1, __mid, __last - 1,
+         .           				  __comp);
+         .                 return std::__unguarded_partition(__first + 1, __last, __first, __comp);
+         .               }
+         .           
+         .             template<typename _RandomAccessIterator, typename _Compare>
+         .               _GLIBCXX20_CONSTEXPR
+         .               inline void
+-- line 1863 ----------------------------------------
+-- line 1912 ----------------------------------------
+         .           
+         .             template<typename _RandomAccessIterator, typename _Size, typename _Compare>
+         .               _GLIBCXX20_CONSTEXPR
+         .               void
+         .               __introselect(_RandomAccessIterator __first, _RandomAccessIterator __nth,
+         .           		  _RandomAccessIterator __last, _Size __depth_limit,
+         .           		  _Compare __comp)
+         .               {
+     3,748 ( 0.00%)        while (__last - __first > 3)
+         .           	{
+     3,380 ( 0.00%)  	  if (__depth_limit == 0)
+         .           	    {
+         .           	      std::__heap_select(__first, __nth + 1, __last, __comp);
+         .           	      // Place the nth largest element in its final position.
+         .           	      std::iter_swap(__first, __nth);
+         .           	      return;
+         .           	    }
+         .           	  --__depth_limit;
+         .           	  _RandomAccessIterator __cut =
+         .           	    std::__unguarded_partition_pivot(__first, __last, __comp);
+         .           	  if (__cut <= __nth)
+     5,346 ( 0.00%)  	    __first = __cut;
+         .           	  else
+         .           	    __last = __cut;
+         .           	}
+         .                 std::__insertion_sort(__first, __last, __comp);
+         .               }
+         .           
+         .             /// @endcond
+         .           
+-- line 1941 ----------------------------------------
+-- line 3701 ----------------------------------------
+         .              *  @return  Nothing.
+         .              *
+         .              *  Reorders the elements in the range @p [__first,__last) using @p __g to
+         .              *  provide random numbers.
+         .             */
+         .             template<typename _RandomAccessIterator,
+         .           	   typename _UniformRandomNumberGenerator>
+         .               void
+         8 ( 0.00%)      shuffle(_RandomAccessIterator __first, _RandomAccessIterator __last,
+         .           	    _UniformRandomNumberGenerator&& __g)
+         .               {
+         .                 // concept requirements
+         .                 __glibcxx_function_requires(_Mutable_RandomAccessIteratorConcept<
+         .           	    _RandomAccessIterator>)
+         .                 __glibcxx_requires_valid_range(__first, __last);
+         .           
+         2 ( 0.00%)        if (__first == __last)
+         .           	return;
+         .           
+         .                 typedef typename iterator_traits<_RandomAccessIterator>::difference_type
+         .           	_DistanceType;
+         .           
+         .                 typedef typename std::make_unsigned<_DistanceType>::type __ud_type;
+         .                 typedef typename std::uniform_int_distribution<__ud_type> __distr_type;
+         .                 typedef typename __distr_type::param_type __p_type;
+-- line 3725 ----------------------------------------
+-- line 3727 ----------------------------------------
+         .                 typedef typename remove_reference<_UniformRandomNumberGenerator>::type
+         .           	_Gen;
+         .                 typedef typename common_type<typename _Gen::result_type, __ud_type>::type
+         .           	__uc_type;
+         .           
+         .                 const __uc_type __urngrange = __g.max() - __g.min();
+         .                 const __uc_type __urange = __uc_type(__last - __first);
+         .           
+         5 ( 0.00%)        if (__urngrange / __urange >= __urange)
+         .                   // I.e. (__urngrange >= __urange * __urange) but without wrap issues.
+         .                 {
+         .           	_RandomAccessIterator __i = __first + 1;
+         .           
+         .           	// Since we know the range isn't empty, an even number of elements
+         .           	// means an uneven number of elements /to swap/, in which case we
+         .           	// do the first one up front:
+         .           
+-- line 3743 ----------------------------------------
+-- line 3762 ----------------------------------------
+         .           	  std::iter_swap(__i++, __first + __pospos.second);
+         .           	}
+         .           
+         .           	return;
+         .                 }
+         .           
+         .                 __distr_type __d;
+         .           
+   299,999 ( 0.00%)        for (_RandomAccessIterator __i = __first + 1; __i != __last; ++__i)
+   299,997 ( 0.00%)  	std::iter_swap(__i, __first + __d(__g, __p_type(0, __i - __first)));
+ 6,799,309 ( 0.00%)  => /usr/include/c++/15/bits/uniform_int_dist.h:unsigned long std::uniform_int_distribution<unsigned long>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<unsigned long>::param_type const&) [clone .isra.0] (99,999x)
+         6 ( 0.00%)      }
+         .           #endif // C++11
+         .           
+         .           _GLIBCXX_BEGIN_NAMESPACE_ALGO
+         .           
+         .             /**
+         .              *  @brief Apply a function to every element of a sequence.
+         .              *  @ingroup non_mutating_algorithms
+         .              *  @param  __first  An input iterator.
+-- line 3780 ----------------------------------------
+-- line 4757 ----------------------------------------
+         .                 __glibcxx_function_requires(_Mutable_RandomAccessIteratorConcept<
+         .           				  _RandomAccessIterator>)
+         .                 __glibcxx_function_requires(_LessThanComparableConcept<
+         .           	    typename iterator_traits<_RandomAccessIterator>::value_type>)
+         .                 __glibcxx_requires_valid_range(__first, __nth);
+         .                 __glibcxx_requires_valid_range(__nth, __last);
+         .                 __glibcxx_requires_irreflexive(__first, __last);
+         .           
+       184 ( 0.00%)        if (__first == __last || __nth == __last)
+         .           	return;
+         .           
+       276 ( 0.00%)        std::__introselect(__first, __nth, __last,
+         .           			 std::__lg(__last - __first) * 2,
+         .           			 __gnu_cxx::__ops::__iter_less_iter());
+         .               }
+         .           
+         .             /**
+         .              *  @brief Sort a sequence just enough to find a particular position
+         .              *         using a predicate for comparison.
+         .              *  @ingroup sorting_algorithms
+-- line 4776 ----------------------------------------
+-- line 5694 ----------------------------------------
+         .           
+         .             template<typename _ForwardIterator, typename _Compare>
+         .               _GLIBCXX14_CONSTEXPR
+         .               _ForwardIterator
+         .               __max_element(_ForwardIterator __first, _ForwardIterator __last,
+         .           		  _Compare __comp)
+         .               {
+         .                 if (__first == __last) return __first;
+       138 ( 0.00%)        _ForwardIterator __result = __first;
+27,600,000 ( 0.01%)        while (++__first != __last)
+ 9,199,954 ( 0.00%)  	if (__comp(__result, __first))
+18,399,908 ( 0.01%)  	  __result = __first;
+         .                 return __result;
+         .               }
+         .           
+         .             /**
+         .              *  @brief  Return the maximum element in a range.
+         .              *  @ingroup sorting_algorithms
+         .              *  @param  __first  Start of range.
+         .              *  @param  __last   End of range.
+-- line 5713 ----------------------------------------
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /usr/include/c++/15/bits/hashtable.h
+--------------------------------------------------------------------------------
+Ir                     
+
+-- line 380 ----------------------------------------
+            .                 _M_update_bbegin(__node_ptr __n)
+            .                 {
+            .           	_M_before_begin._M_nxt = __n;
+            .           	_M_update_bbegin();
+            .                 }
+            .           
+            .                 bool
+            .                 _M_uses_single_bucket(__buckets_ptr __bkts) const
+           93 ( 0.00%)        { return __builtin_expect(__bkts == &_M_single_bucket, false); }
+            .           
+            .                 bool
+            .                 _M_uses_single_bucket() const
+            .                 { return _M_uses_single_bucket(_M_buckets); }
+            .           
+            .                 static constexpr size_t
+            .                 __small_size_threshold() noexcept
+            .                 {
+-- line 396 ----------------------------------------
+-- line 399 ----------------------------------------
+            .                 }
+            .           
+            .                 __hashtable_alloc&
+            .                 _M_base_alloc() { return *this; }
+            .           
+            .                 __buckets_ptr
+            .                 _M_allocate_buckets(size_type __bkt_count)
+            .                 {
+        1,488 ( 0.00%)  	if (__builtin_expect(__bkt_count == 1, false))
+            .           	  {
+            .           	    _M_single_bucket = nullptr;
+            .           	    return &_M_single_bucket;
+            .           	  }
+            .           
+            .           	return __hashtable_alloc::_M_allocate_buckets(__bkt_count);
+            .                 }
+            .           
+            .                 void
+            .                 _M_deallocate_buckets(__buckets_ptr __bkts, size_type __bkt_count)
+            .                 {
+        1,674 ( 0.00%)  	if (_M_uses_single_bucket(__bkts))
+            .           	  return;
+            .           
+            .           	__hashtable_alloc::_M_deallocate_buckets(__bkts, __bkt_count);
+            .                 }
+            .           
+            .                 void
+            .                 _M_deallocate_buckets()
+      226,775 ( 0.00%)        { _M_deallocate_buckets(_M_buckets, _M_bucket_count); }
+            .           
+            .                 // Gets bucket begin, deals with the fact that non-empty buckets contain
+            .                 // their before begin node.
+            .                 __node_ptr
+            .                 _M_bucket_begin(size_type __bkt) const
+            .                 {
+            .           	__node_base_ptr __n = _M_buckets[__bkt];
+            .           	return __n ? static_cast<__node_ptr>(__n->_M_nxt) : nullptr;
+            .                 }
+            .           
+            .                 __node_ptr
+            .                 _M_begin() const
+          837 ( 0.00%)        { return static_cast<__node_ptr>(_M_before_begin._M_nxt); }
+            .           
+            .                 // Assign *this using another _Hashtable instance. Whether elements
+            .                 // are copied or moved depends on the _Ht reference.
+            .                 template<typename _Ht>
+            .           	void
+            .           	_M_assign_elements(_Ht&&);
+            .           
+            .                 template<typename _Ht>
+-- line 448 ----------------------------------------
+-- line 505 ----------------------------------------
+            .                 template<typename _InputIterator>
+            .           	_Hashtable(_InputIterator __first, _InputIterator __last,
+            .           		   size_type __bkt_count_hint,
+            .           		   const _Hash&, const _Equal&, const allocator_type&,
+            .           		   false_type __uks);
+            .           
+            .               public:
+            .                 // Constructor, destructor, assignment, swap
+          558 ( 0.00%)        _Hashtable() = default;
+            .           
+            .                 _Hashtable(const _Hashtable&);
+            .           
+            .                 _Hashtable(const _Hashtable&, const allocator_type&);
+            .           
+            .                 explicit
+            .                 _Hashtable(size_type __bkt_count_hint,
+            .           		 const _Hash& __hf = _Hash(),
+-- line 521 ----------------------------------------
+-- line 803 ----------------------------------------
+            .               private:
+            .                 // Bucket index computation helpers.
+            .                 size_type
+            .                 _M_bucket_index(const __node_value_type& __n) const noexcept
+            .                 { return __hash_code_base::_M_bucket_index(__n, _M_bucket_count); }
+            .           
+            .                 size_type
+            .                 _M_bucket_index(__hash_code __c) const
+  660,838,176 ( 0.28%)        { return __hash_code_base::_M_bucket_index(__c, _M_bucket_count); }
+            .           
+            .           #pragma GCC diagnostic push
+            .           #pragma GCC diagnostic ignored "-Wc++17-extensions" // if constexpr
+            .                 // Get hash code for a node that comes from another _Hashtable.
+            .                 // Reuse a cached hash code if the hash function is stateless,
+            .                 // otherwise recalculate it using our own hash function.
+            .                 __hash_code
+            .                 _M_hash_code_ext(const __node_value_type& __from) const
+-- line 819 ----------------------------------------
+-- line 871 ----------------------------------------
+            .           	// A const_iterator that refers to the node, or cend().
+            .           	explicit operator const_iterator() const noexcept
+            .           	{ return const_iterator(_M_node()); }
+            .           
+            .           	// A pointer to the node, or null.
+            .           	__node_ptr _M_node() const
+            .           	{
+            .           	  if (_M_before)
+  107,190,772 ( 0.05%)  	    return static_cast<__node_ptr>(_M_before->_M_nxt);
+            .           	  return __node_ptr();
+            .           	}
+            .           
+            .           	__node_base_ptr _M_before{}; // Must only be used to get _M_nxt
+            .           	__hash_code _M_hash_code{};  // Only valid if _M_bucket_index != -1
+            .           	size_type _M_bucket_index = size_type(-1);
+            .                 };
+            .           
+-- line 887 ----------------------------------------
+-- line 902 ----------------------------------------
+            .                 __location_type
+            .                 _M_locate(const key_type& __k) const;
+            .           
+            .                 __node_ptr
+            .                 _M_find_node(size_type __bkt, const key_type& __key,
+            .           		   __hash_code __c) const
+            .                 {
+            .           	if (__node_base_ptr __before_n = _M_find_before_node(__bkt, __key, __c))
+    9,186,287 ( 0.00%)  	  return static_cast<__node_ptr>(__before_n->_M_nxt);
+            .           	return nullptr;
+            .                 }
+            .           
+            .                 template<typename _Kt>
+            .           	__node_ptr
+            .           	_M_find_node_tr(size_type __bkt, const _Kt& __key,
+            .           			__hash_code __c) const
+            .           	{
+-- line 918 ----------------------------------------
+-- line 920 ----------------------------------------
+            .           	    return static_cast<__node_ptr>(__before_n->_M_nxt);
+            .           	  return nullptr;
+            .           	}
+            .           
+            .                 // Insert a node at the beginning of a bucket.
+            .                 void
+            .                 _M_insert_bucket_begin(size_type __bkt, __node_ptr __node)
+            .                 {
+      455,596 ( 0.00%)  	if (_M_buckets[__bkt])
+            .           	  {
+            .           	    // Bucket is not empty, we just need to insert the new node
+            .           	    // after the bucket before begin.
+      110,168 ( 0.00%)  	    __node->_M_nxt = _M_buckets[__bkt]->_M_nxt;
+      110,168 ( 0.00%)  	    _M_buckets[__bkt]->_M_nxt = __node;
+            .           	  }
+            .           	else
+            .           	  {
+            .           	    // The bucket is empty, the new node is inserted at the
+            .           	    // beginning of the singly-linked list and the bucket will
+            .           	    // contain _M_before_begin pointer.
+      117,258 ( 0.00%)  	    __node->_M_nxt = _M_before_begin._M_nxt;
+       58,629 ( 0.00%)  	    _M_before_begin._M_nxt = __node;
+            .           
+      117,258 ( 0.00%)  	    if (__node->_M_nxt)
+            .           	      // We must update former begin bucket that is pointing to
+            .           	      // _M_before_begin.
+       58,536 ( 0.00%)  	      _M_buckets[_M_bucket_index(*__node->_M_next())] = __node;
+            .           
+      175,887 ( 0.00%)  	    _M_buckets[__bkt] = &_M_before_begin;
+            .           	  }
+            .                 }
+            .           
+            .                 // Remove the bucket first node
+            .                 void
+            .                 _M_remove_bucket_begin(size_type __bkt, __node_ptr __next_n,
+            .           			     size_type __next_bkt)
+            .                 {
+-- line 956 ----------------------------------------
+-- line 1829 ----------------------------------------
+            .           	  __ht.clear();
+            .           	}
+            .               }
+            .           
+            .             template<typename _Key, typename _Value, typename _Alloc,
+            .           	   typename _ExtractKey, typename _Equal,
+            .           	   typename _Hash, typename _RangeHash, typename _Unused,
+            .           	   typename _RehashPolicy, typename _Traits>
+          465 ( 0.00%)      _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
+            .           	       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
+            .               ~_Hashtable() noexcept
+            .               {
+            .                 // Getting a bucket index from a node shall not throw because it is used
+            .                 // during the rehash process. This static_assert purpose is limited to usage
+            .                 // of _Hashtable with _Hashtable_traits requesting non-cached hash code.
+            .                 // Need a complete type to check this, so do it in the destructor not at
+            .                 // class scope.
+-- line 1845 ----------------------------------------
+-- line 1846 ----------------------------------------
+            .                 static_assert(noexcept(declval<const __hash_code_base_access&>()
+            .           			._M_bucket_index(declval<const __node_value_type&>(),
+            .           					 (std::size_t)0)),
+            .           		    "Cache the hash code or qualify your functors involved"
+            .           		    " in hash code and bucket index computation with noexcept");
+            .           
+            .                 this->_M_deallocate_nodes(_M_begin());
+            .                 _M_deallocate_buckets();
+          279 ( 0.00%)      }
+            .           
+            .             template<typename _Key, typename _Value, typename _Alloc,
+            .           	   typename _ExtractKey, typename _Equal,
+            .           	   typename _Hash, typename _RangeHash, typename _Unused,
+            .           	   typename _RehashPolicy, typename _Traits>
+            .               void
+            .               _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
+            .           	       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
+-- line 1862 ----------------------------------------
+-- line 2197 ----------------------------------------
+            .           	   typename _RehashPolicy, typename _Traits>
+            .               auto
+            .               _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
+            .           	       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
+            .               _M_find_before_node(size_type __bkt, const key_type& __k,
+            .           			__hash_code __code) const
+            .               -> __node_base_ptr
+            .               {
+1,330,976,352 ( 0.56%)        __node_base_ptr __prev_p = _M_buckets[__bkt];
+1,321,676,352 ( 0.56%)        if (!__prev_p)
+            .           	return nullptr;
+            .           
+  317,998,466 ( 0.13%)        for (__node_ptr __p = static_cast<__node_ptr>(__prev_p->_M_nxt);;
+   21,094,782 ( 0.01%)  	   __p = __p->_M_next())
+            .           	{
+  999,758,812 ( 0.42%)  	  if (this->_M_equals(__k, __code, *__p))
+            .           	    return __prev_p;
+            .           
+1,112,763,531 ( 0.47%)  	  if (__builtin_expect (!__p->_M_nxt || _M_bucket_index(*__p->_M_next()) != __bkt, 0))
+            .           	    break;
+  222,307,482 ( 0.09%)  	  __prev_p = __p;
+            .           	}
+            .           
+            .                 return nullptr;
+            .               }
+            .           
+            .             template<typename _Key, typename _Value, typename _Alloc,
+            .           	   typename _ExtractKey, typename _Equal,
+            .           	   typename _Hash, typename _RangeHash, typename _Unused,
+-- line 2225 ----------------------------------------
+-- line 2258 ----------------------------------------
+            .               _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
+            .           	       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
+            .               _M_locate(const key_type& __k) const
+            .               -> __location_type
+            .               {
+            .                 __location_type __loc;
+            .                 const auto __size = size();
+            .           
+1,303,076,352 ( 0.55%)        if (__size <= __small_size_threshold())
+            .           	{
+            .           	  __loc._M_before = pointer_traits<__node_base_ptr>::
+            .           	       pointer_to(const_cast<__node_base&>(_M_before_begin));
+            .           	  while (__loc._M_before->_M_nxt)
+            .           	    {
+            .           	      if (this->_M_key_equals(__k, *__loc._M_node()))
+            .           		return __loc;
+            .           	      __loc._M_before = __loc._M_before->_M_nxt;
+-- line 2274 ----------------------------------------
+-- line 2464 ----------------------------------------
+            .           	   typename _RehashPolicy, typename _Traits>
+            .               auto
+            .               _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
+            .           	       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
+            .               _M_insert_unique_node(size_type __bkt, __hash_code __code,
+            .           			  __node_ptr __node, size_type __n_elt)
+            .               -> iterator
+            .               {
+      113,713 ( 0.00%)        __rehash_guard_t __rehash_guard(_M_rehash_policy);
+            .                 std::pair<bool, std::size_t> __do_rehash
+      454,852 ( 0.00%)  	= _M_rehash_policy._M_need_rehash(_M_bucket_count, _M_element_count,
+    1,474,662 ( 0.00%)  => ???:0x0000000004003880 (113,713x)
+            .           					  __n_elt);
+            .           
+      227,426 ( 0.00%)        if (__do_rehash.first)
+            .           	{
+          744 ( 0.00%)  	  _M_rehash(__do_rehash.second, true_type{});
+            .           	  __bkt = _M_bucket_index(__code);
+            .           	}
+            .           
+            .                 __rehash_guard._M_guarded_obj = nullptr;
+            .                 _M_store_code(*__node, __code);
+            .           
+            .                 // Always insert at the beginning of the bucket.
+            .                 _M_insert_bucket_begin(__bkt, __node);
+      113,713 ( 0.00%)        ++_M_element_count;
+            .                 return iterator(__node);
+            .               }
+            .           
+            .             template<typename _Key, typename _Value, typename _Alloc,
+            .           	   typename _ExtractKey, typename _Equal,
+            .           	   typename _Hash, typename _RangeHash, typename _Unused,
+            .           	   typename _RehashPolicy, typename _Traits>
+            .               auto
+-- line 2496 ----------------------------------------
+-- line 2748 ----------------------------------------
+            .           	   typename _RehashPolicy, typename _Traits>
+            .               void
+            .               _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
+            .           	       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
+            .               _M_rehash(size_type __bkt_count, true_type /* __uks */)
+            .               {
+            .                 __buckets_ptr __new_buckets = _M_allocate_buckets(__bkt_count);
+            .                 __node_ptr __p = _M_begin();
+          744 ( 0.00%)        _M_before_begin._M_nxt = nullptr;
+          744 ( 0.00%)        std::size_t __bbegin_bkt = 0;
+      398,598 ( 0.00%)        while (__p)
+            .           	{
+            .           	  __node_ptr __next = __p->_M_next();
+            .           	  std::size_t __bkt
+            .           	    = __hash_code_base::_M_bucket_index(*__p, __bkt_count);
+      794,220 ( 0.00%)  	  if (!__new_buckets[__bkt])
+            .           	    {
+      342,244 ( 0.00%)  	      __p->_M_nxt = _M_before_begin._M_nxt;
+      171,122 ( 0.00%)  	      _M_before_begin._M_nxt = __p;
+      171,866 ( 0.00%)  	      __new_buckets[__bkt] = &_M_before_begin;
+      342,244 ( 0.00%)  	      if (__p->_M_nxt)
+      170,471 ( 0.00%)  		__new_buckets[__bbegin_bkt] = __p;
+      342,244 ( 0.00%)  	      __bbegin_bkt = __bkt;
+            .           	    }
+            .           	  else
+            .           	    {
+       54,866 ( 0.00%)  	      __p->_M_nxt = __new_buckets[__bkt]->_M_nxt;
+       54,866 ( 0.00%)  	      __new_buckets[__bkt]->_M_nxt = __p;
+            .           	    }
+            .           
+            .           	  __p = __next;
+            .           	}
+            .           
+            .                 _M_deallocate_buckets();
+        1,488 ( 0.00%)        _M_bucket_count = __bkt_count;
+          744 ( 0.00%)        _M_buckets = __new_buckets;
+            .               }
+            .           
+            .             // Rehash when there can be equivalent elements, preserve their relative
+            .             // order.
+            .             template<typename _Key, typename _Value, typename _Alloc,
+            .           	   typename _ExtractKey, typename _Equal,
+            .           	   typename _Hash, typename _RangeHash, typename _Unused,
+            .           	   typename _RehashPolicy, typename _Traits>
+-- line 2791 ----------------------------------------
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /usr/include/c++/15/bits/stl_vector.h
+--------------------------------------------------------------------------------
+Ir                      
+
+-- line 98 ----------------------------------------
+             .                 struct _Vector_impl_data
+             .                 {
+             .           	pointer _M_start;
+             .           	pointer _M_finish;
+             .           	pointer _M_end_of_storage;
+             .           
+             .           	_GLIBCXX20_CONSTEXPR
+             .           	_Vector_impl_data() _GLIBCXX_NOEXCEPT
+       341,748 ( 0.00%)  	: _M_start(), _M_finish(), _M_end_of_storage()
+             .           	{ }
+             .           
+             .           #if __cplusplus >= 201103L
+             .           	_GLIBCXX20_CONSTEXPR
+             .           	_Vector_impl_data(_Vector_impl_data&& __x) noexcept
+            62 ( 0.00%)  	: _M_start(__x._M_start), _M_finish(__x._M_finish),
+            62 ( 0.00%)  	  _M_end_of_storage(__x._M_end_of_storage)
+             .           	{ __x._M_start = __x._M_finish = __x._M_end_of_storage = pointer(); }
+             .           #endif
+             .           
+             .           	_GLIBCXX20_CONSTEXPR
+             .           	void
+             .           	_M_copy_data(_Vector_impl_data const& __x) _GLIBCXX_NOEXCEPT
+             .           	{
+           135 ( 0.00%)  	  _M_start = __x._M_start;
+             .           	  _M_finish = __x._M_finish;
+           135 ( 0.00%)  	  _M_end_of_storage = __x._M_end_of_storage;
+             .           	}
+             .           
+             .           	_GLIBCXX20_CONSTEXPR
+             .           	void
+             .           	_M_swap_data(_Vector_impl_data& __x) _GLIBCXX_NOEXCEPT
+             .           	{
+             .           	  // Do not use std::swap(_M_start, __x._M_start), etc as it loses
+             .           	  // information used by TBAA.
+-- line 131 ----------------------------------------
+-- line 365 ----------------------------------------
+             .           
+             .                 _GLIBCXX20_CONSTEXPR
+             .                 _Vector_base(const allocator_type& __a, _Vector_base&& __x)
+             .                 : _M_impl(_Tp_alloc_type(__a), std::move(__x._M_impl))
+             .                 { }
+             .           #endif
+             .           
+             .                 _GLIBCXX20_CONSTEXPR
+            12 ( 0.00%)        ~_Vector_base() _GLIBCXX_NOEXCEPT
+             .                 {
+             .           	_M_deallocate(_M_impl._M_start,
+       341,815 ( 0.00%)  		      _M_impl._M_end_of_storage - _M_impl._M_start);
+             .                 }
+             .           
+             .               public:
+             .                 _Vector_impl _M_impl;
+             .           
+             .                 _GLIBCXX20_CONSTEXPR
+             .                 pointer
+             .                 _M_allocate(size_t __n)
+             .                 {
+             .           	typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
+           495 ( 0.00%)  	return __n != 0 ? _Tr::allocate(_M_impl, __n) : pointer();
+             .                 }
+             .           
+             .                 _GLIBCXX20_CONSTEXPR
+             .                 void
+             .                 _M_deallocate(pointer __p, size_t __n)
+             .                 {
+             .           	typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
+       228,404 ( 0.00%)  	if (__p)
+             .           	  _Tr::deallocate(_M_impl, __p, __n);
+             .                 }
+             .           
+             .               protected:
+             .           
+             .                 _GLIBCXX20_CONSTEXPR
+             .                 void
+             .                 _M_create_storage(size_t __n)
+             .                 {
+           334 ( 0.00%)  	this->_M_impl._M_start = this->_M_allocate(__n);
+             .           	this->_M_impl._M_finish = this->_M_impl._M_start;
+           516 ( 0.00%)  	this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __n;
+             .                 }
+             .           
+             .           #if __glibcxx_containers_ranges // C++ >= 23
+             .                 // Called by insert_range, and indirectly by assign_range, append_range.
+             .                 // Initializes new elements in storage at __ptr and updates __ptr to
+             .                 // point after the last new element.
+             .                 // Provides strong exception safety guarantee.
+             .                 // Requires [ptr, ptr+distance(rg)) is a valid range.
+-- line 415 ----------------------------------------
+-- line 627 ----------------------------------------
+             .                  *  The newly-created %vector uses a copy of the allocator object used
+             .                  *  by @a __x (unless the allocator traits dictate a different object).
+             .                  */
+             .                 _GLIBCXX20_CONSTEXPR
+             .                 vector(const vector& __x)
+             .                 : _Base(__x.size(),
+             .           	_Alloc_traits::_S_select_on_copy(__x._M_get_Tp_allocator()))
+             .                 {
+           226 ( 0.00%)  	this->_M_impl._M_finish =
+             .           	  std::__uninitialized_copy_a(__x.begin(), __x.end(),
+             .           				      this->_M_impl._M_start,
+             .           				      _M_get_Tp_allocator());
+             .                 }
+             .           
+             .           #if __cplusplus >= 201103L
+             .                 /**
+             .                  *  @brief  %Vector move constructor.
+-- line 643 ----------------------------------------
+-- line 792 ----------------------------------------
+             .           
+             .                 /**
+             .                  *  The dtor only erases the elements, and note that if the
+             .                  *  elements themselves are pointers, the pointed-to memory is
+             .                  *  not touched in any way.  Managing the pointer is the user's
+             .                  *  responsibility.
+             .                  */
+             .                 _GLIBCXX20_CONSTEXPR
+             5 ( 0.00%)        ~vector() _GLIBCXX_NOEXCEPT
+             .                 {
+             4 ( 0.00%)  	std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+             .           		      _M_get_Tp_allocator());
+             .           	_GLIBCXX_ASAN_ANNOTATE_BEFORE_DEALLOC;
+            37 ( 0.00%)        }
+           217 ( 0.00%)  => /usr/include/c++/15/bits/stl_vector.h:std::_Vector_base<Point, std::allocator<Point> >::~_Vector_base() (1x)
+           216 ( 0.00%)  => /usr/include/c++/15/bits/stl_vector.h:std::_Vector_base<IterationMetrics, std::allocator<IterationMetrics> >::~_Vector_base() (1x)
+           186 ( 0.00%)  => /usr/include/c++/15/bits/stl_vector.h:std::_Vector_base<Match, std::allocator<Match> >::~_Vector_base() (1x)
+            51 ( 0.00%)  => /usr/include/c++/15/bits/stl_vector.h:std::_Vector_base<Transform2D, std::allocator<Transform2D> >::~_Vector_base() (1x)
+             .           
+             .                 /**
+             .                  *  @brief  %Vector assignment operator.
+             .                  *  @param  __x  A %vector of identical element and allocator types.
+             .                  *
+             .                  *  All the elements of @a __x are copied, but any unused capacity in
+             .                  *  @a __x will not be copied.
+             .                  *
+-- line 813 ----------------------------------------
+-- line 1109 ----------------------------------------
+             .                 crend() const noexcept
+             .                 { return const_reverse_iterator(begin()); }
+             .           #endif
+             .           
+             .                 // [23.2.4.2] capacity
+             .                 /**  Returns the number of elements in the %vector.  */
+             .                 _GLIBCXX_NODISCARD _GLIBCXX20_CONSTEXPR
+             .                 size_type
+            35 ( 0.00%)        size() const _GLIBCXX_NOEXCEPT
+             .                 {
+    48,980,119 ( 0.02%)  	ptrdiff_t __dif = this->_M_impl._M_finish - this->_M_impl._M_start;
+             .           	if (__dif < 0)
+             .           	   __builtin_unreachable ();
+             .           	return size_type(__dif);
+             .                 }
+             .           
+             .                 /**  Returns the size() of the largest possible %vector.  */
+             .                 _GLIBCXX_NODISCARD _GLIBCXX20_CONSTEXPR
+             .                 size_type
+-- line 1127 ----------------------------------------
+-- line 1202 ----------------------------------------
+             .                 /**
+             .                  *  Returns the total number of elements that the %vector can
+             .                  *  hold before needing to allocate more memory.
+             .                  */
+             .                 _GLIBCXX_NODISCARD _GLIBCXX20_CONSTEXPR
+             .                 size_type
+             .                 capacity() const _GLIBCXX_NOEXCEPT
+             .                 {
+            96 ( 0.00%)  	ptrdiff_t __dif = this->_M_impl._M_end_of_storage
+           192 ( 0.00%)  			  - this->_M_impl._M_start;
+             .           	if (__dif < 0)
+             .           	   __builtin_unreachable ();
+             .           	return size_type(__dif);
+             .                 }
+             .           
+             .                 /**
+             .                  *  Returns true if the %vector is empty.  (Thus begin() would
+             .                  *  equal end().)
+-- line 1219 ----------------------------------------
+-- line 1275 ----------------------------------------
+             .                  *  out_of_range lookups are not defined. (For checked lookups
+             .                  *  see at().)
+             .                  */
+             .                 _GLIBCXX_NODISCARD _GLIBCXX20_CONSTEXPR
+             .                 const_reference
+             .                 operator[](size_type __n) const _GLIBCXX_NOEXCEPT
+             .                 {
+             .           	__glibcxx_requires_subscript(__n);
+20,841,716,540 ( 8.78%)  	return *(this->_M_impl._M_start + __n);
+             .                 }
+             .           
+             .               protected:
+             .                 /// Safety check used only from at().
+             .                 _GLIBCXX20_CONSTEXPR
+             .                 void
+             .                 _M_range_check(size_type __n) const
+             .                 {
+-- line 1291 ----------------------------------------
+-- line 1408 ----------------------------------------
+             .                  *  This is a typical stack operation.  The function creates an
+             .                  *  element at the end of the %vector and assigns the given data
+             .                  *  to it.  Due to the nature of a %vector this operation can be
+             .                  *  done in constant time if the %vector has preallocated space
+             .                  *  available.
+             .                  */
+             .                 _GLIBCXX20_CONSTEXPR
+             .                 void
+            15 ( 0.00%)        push_back(const value_type& __x)
+             .                 {
+           758 ( 0.00%)  	if (this->_M_impl._M_finish != this->_M_impl._M_end_of_storage)
+             .           	  {
+             .           	    _GLIBCXX_ASAN_ANNOTATE_GROW(1);
+             .           	    _Alloc_traits::construct(this->_M_impl, this->_M_impl._M_finish,
+             .           				     __x);
+           402 ( 0.00%)  	    ++this->_M_impl._M_finish;
+             .           	    _GLIBCXX_ASAN_ANNOTATE_GREW(1);
+             .           	  }
+             .           	else
+           171 ( 0.00%)  	  _M_realloc_append(__x);
+       745,414 ( 0.00%)  => /usr/include/c++/15/bits/vector.tcc:void std::vector<std::vector<Point, std::allocator<Point> >, std::allocator<std::vector<Point, std::allocator<Point> > > >::_M_realloc_append<std::vector<Point, std::allocator<Point> > const&>(std::vector<Point, std::allocator<Point> > const&) (4x)
+         1,688 ( 0.00%)  => /usr/include/c++/15/bits/vector.tcc:void std::vector<Transform2D, std::allocator<Transform2D> >::_M_realloc_append<Transform2D const&>(Transform2D const&) (5x)
+            13 ( 0.00%)        }
+             .           
+             .           #if __cplusplus >= 201103L
+             .                 _GLIBCXX20_CONSTEXPR
+             .                 void
+             .                 push_back(value_type&& __x)
+             .                 { emplace_back(std::move(__x)); }
+             .           
+             .                 template<typename... _Args>
+-- line 1436 ----------------------------------------
+-- line 1874 ----------------------------------------
+             .           	_GLIBCXX20_CONSTEXPR
+             .           	_Guard_alloc(pointer __s, size_type __l, _Base& __vect)
+             .           	: _M_storage(__s), _M_len(__l), _M_vect(__vect)
+             .           	{ }
+             .           
+             .           	_GLIBCXX20_CONSTEXPR
+             .           	~_Guard_alloc()
+             .           	{
+     1,449,720 ( 0.00%)  	  if (_M_storage)
+             .           	    _M_vect._M_deallocate(_M_storage, _M_len);
+             .           	}
+             .           
+             .           	_GLIBCXX20_CONSTEXPR
+             .           	pointer
+             .           	_M_release()
+             .           	{
+             .           	  pointer __res = _M_storage;
+-- line 1890 ----------------------------------------
+-- line 1991 ----------------------------------------
+             .           	}
+             .           
+             .                 // Called by the first initialize_dispatch above and by the
+             .                 // vector(n,value,a) constructor.
+             .                 _GLIBCXX20_CONSTEXPR
+             .                 void
+             .                 _M_fill_initialize(size_type __n, const value_type& __value)
+             .                 {
+            29 ( 0.00%)  	this->_M_impl._M_finish =
+             .           	  std::__uninitialized_fill_n_a(this->_M_impl._M_start, __n, __value,
+             .           					_M_get_Tp_allocator());
+             .                 }
+             .           
+             .           #if __cplusplus >= 201103L
+             .                 // Called by the vector(n) constructor.
+             .                 _GLIBCXX20_CONSTEXPR
+             .                 void
+-- line 2007 ----------------------------------------
+-- line 2196 ----------------------------------------
+             .                 { return _M_insert_rval(__position, std::move(__v)); }
+             .           #endif
+             .           
+             .                 // Called by _M_fill_insert, _M_insert_aux etc.
+             .                 _GLIBCXX20_CONSTEXPR
+             .                 size_type
+             .                 _M_check_len(size_type __n, const char* __s) const
+             .                 {
+     2,899,602 ( 0.00%)  	if (max_size() - size() < __n)
+             .           	  __throw_length_error(__N(__s));
+             .           
+       724,906 ( 0.00%)  	const size_type __len = size() + (std::max)(size(), __n);
+     2,174,718 ( 0.00%)  	return (__len < size() || __len > max_size()) ? max_size() : __len;
+             .                 }
+             .           
+             .                 // Called by constructors to check initial size.
+             .                 static _GLIBCXX20_CONSTEXPR size_type
+             .                 _S_check_init_len(size_type __n, const allocator_type& __a)
+             .                 {
+             .           	if (__n > _S_max_size(_Tp_alloc_type(__a)))
+             .           	  __throw_length_error(
+-- line 2216 ----------------------------------------
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /usr/include/c++/15/bits/hashtable_policy.h
+--------------------------------------------------------------------------------
+Ir                     
+
+-- line 288 ----------------------------------------
+            .              *  template parameter of class template _Hashtable controls whether
+            .              *  nodes also store a hash code. In some cases (e.g. strings) this
+            .              *  may be a performance win.
+            .              */
+            .             struct _Hash_node_base
+            .             {
+            .               _Hash_node_base* _M_nxt;
+            .           
+      113,806 ( 0.00%)      _Hash_node_base() noexcept : _M_nxt() { }
+            .           
+            .               _Hash_node_base(_Hash_node_base* __next) noexcept : _M_nxt(__next) { }
+            .             };
+            .           
+            .             /**
+            .              *  struct _Hash_node_value_base
+            .              *
+            .              *  Node type with the value to store.
+-- line 304 ----------------------------------------
+-- line 357 ----------------------------------------
+            .              *  Primary template struct _Hash_node.
+            .              */
+            .             template<typename _Value, bool _Cache_hash_code>
+            .               struct _Hash_node
+            .               : _Hash_node_base
+            .               , _Hash_node_value<_Value, _Cache_hash_code>
+            .               {
+            .                 _Hash_node*
+      312,268 ( 0.00%)        _M_next() const noexcept
+      312,268 ( 0.00%)        { return static_cast<_Hash_node*>(this->_M_nxt); }
+            .               };
+            .           
+            .             /// Base class for node iterators.
+            .             template<typename _Value, bool _Cache_hash_code>
+            .               struct _Node_iterator_base
+            .               {
+            .                 using __node_type = _Hash_node<_Value, _Cache_hash_code>;
+            .           
+-- line 374 ----------------------------------------
+-- line 576 ----------------------------------------
+            .             // classes.  These are defaults for the policies.
+            .           
+            .             /// Default range hashing function: use division to fold a large number
+            .             /// into the range [0, N).
+            .             struct _Mod_range_hashing
+            .             {
+            .               size_t
+            .               operator()(size_t __num, size_t __den) const noexcept
+3,311,048,655 ( 1.39%)      { return __num % __den; }
+            .             };
+            .           
+            .             /// Default ranged hash function H.  In principle it should be a
+            .             /// function object composed from objects of type H1 and H2 such that
+            .             /// h(k, N) = h2(h1(k), N), but that would mean making extra copies of
+            .             /// h1 and h2.  So instead we'll just use a tag to tell class template
+            .             /// hashtable to do that composition.
+            .             struct _Default_ranged_hash { };
+-- line 592 ----------------------------------------
+-- line 593 ----------------------------------------
+            .           
+            .             /// Default value for rehash policy.  Bucket size is (usually) the
+            .             /// smallest prime that keeps the load factor small enough.
+            .             struct _Prime_rehash_policy
+            .             {
+            .               using __has_load_factor = true_type;
+            .           
+            .               _Prime_rehash_policy(float __z = 1.0) noexcept
+          186 ( 0.00%)      : _M_max_load_factor(__z), _M_next_resize(0) { }
+            .           
+            .               float
+            .               max_load_factor() const noexcept
+            .               { return _M_max_load_factor; }
+            .           
+            .               // Return a bucket size no smaller than n.
+            .               // TODO: 'const' qualifier is kept for abi compatibility reason.
+            .               size_t
+-- line 609 ----------------------------------------
+-- line 622 ----------------------------------------
+            .               std::pair<bool, size_t>
+            .               _M_need_rehash(size_t __n_bkt, size_t __n_elt,
+            .           		   size_t __n_ins) const;
+            .           
+            .               using _State = size_t;
+            .           
+            .               _State
+            .               _M_state() const
+      113,713 ( 0.00%)      { return _M_next_resize; }
+            .           
+            .               void
+            .               _M_reset() noexcept
+            .               { _M_next_resize = 0; }
+            .           
+            .               void
+            .               _M_reset(_State __state)
+            .               { _M_next_resize = __state; }
+-- line 638 ----------------------------------------
+-- line 907 ----------------------------------------
+            .               _Map_base<_Key, pair<const _Key, _Val>, _Alloc, _Select1st, _Equal,
+            .           	      _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits, true>::
+            .               operator[](key_type&& __k)
+            .               -> mapped_type&
+            .               {
+            .                 __hashtable* __h = static_cast<__hashtable*>(this);
+            .                 __hash_code __code = __h->_M_hash_code(__k);
+            .                 size_t __bkt = __h->_M_bucket_index(__code);
+   18,372,574 ( 0.01%)        if (auto __node = __h->_M_find_node(__bkt, __k, __code))
+    9,186,287 ( 0.00%)  	return __node->_M_v().second;
+            .           
+            .                 typename __hashtable::_Scoped_node __node {
+            .           	__h,
+            .           	std::piecewise_construct,
+            .           	std::forward_as_tuple(std::move(__k)),
+            .           	std::tuple<>()
+            .                 };
+            .                 auto __pos
+-- line 924 ----------------------------------------
+-- line 1063 ----------------------------------------
+            .           
+            .                 _Hash_code_base(const _Hash& __hash) : _M_hash{__hash} { }
+            .           
+            .                 __hash_code
+            .                 _M_hash_code(const _Key& __k) const
+            .                 {
+            .           	static_assert(__is_invocable<const _Hash&, const _Key&>{},
+            .           	    "hash function must be invocable with an argument of key type");
+  222,307,482 ( 0.09%)  	return _M_hash._M_obj(__k);
+            .                 }
+            .           
+            .                 template<typename _Kt>
+            .           	__hash_code
+            .           	_M_hash_code_tr(const _Kt& __k) const
+            .           	{
+            .           	  static_assert(__is_invocable<const _Hash&, const _Kt&>{},
+            .           	    "hash function must be invocable with an argument of key type");
+-- line 1079 ----------------------------------------
+-- line 1582 ----------------------------------------
+            .                 __n->~__node_type();
+            .                 __node_alloc_traits::deallocate(_M_node_allocator(), __ptr, 1);
+            .               }
+            .           
+            .             template<typename _NodeAlloc>
+            .               void
+            .               _Hashtable_alloc<_NodeAlloc>::_M_deallocate_nodes(__node_ptr __n)
+            .               {
+      227,798 ( 0.00%)        while (__n)
+            .           	{
+            .           	  __node_ptr __tmp = __n;
+            .           	  __n = __n->_M_next();
+            .           	  _M_deallocate_node(__tmp);
+            .           	}
+            .               }
+            .           
+            .             template<typename _NodeAlloc>
+-- line 1598 ----------------------------------------
+-- line 1599 ----------------------------------------
+            .               auto
+            .               _Hashtable_alloc<_NodeAlloc>::_M_allocate_buckets(size_t __bkt_count)
+            .               -> __buckets_ptr
+            .               {
+            .                 __buckets_alloc_type __alloc(_M_node_allocator());
+            .           
+            .                 auto __ptr = __buckets_alloc_traits::allocate(__alloc, __bkt_count);
+            .                 __buckets_ptr __p = std::__to_address(__ptr);
+        3,720 ( 0.00%)        __builtin_memset(__p, 0, __bkt_count * sizeof(__node_base_ptr));
+    3,195,759 ( 0.00%)  => ???:0x00000000040036d0 (744x)
+            .                 return __p;
+            .               }
+            .           
+            .             template<typename _NodeAlloc>
+            .               void
+            .               _Hashtable_alloc<_NodeAlloc>::
+            .               _M_deallocate_buckets(__buckets_ptr __bkts, size_t __bkt_count)
+            .               {
+-- line 1615 ----------------------------------------
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /usr/include/c++/15/bits/stl_function.h
+--------------------------------------------------------------------------------
+Ir                   
+
+-- line 370 ----------------------------------------
+          .           
+          .             /// One of the @link comparison_functors comparison functors@endlink.
+          .             template<typename _Tp>
+          .               struct equal_to : public binary_function<_Tp, _Tp, bool>
+          .               {
+          .                 _GLIBCXX14_CONSTEXPR
+          .                 bool
+          .                 operator()(const _Tp& __x, const _Tp& __y) const
+626,755,414 ( 0.26%)        { return __x == __y; }
+          .               };
+          .           
+          .             /// One of the @link comparison_functors comparison functors@endlink.
+          .             template<typename _Tp>
+          .               struct not_equal_to : public binary_function<_Tp, _Tp, bool>
+          .               {
+          .                 _GLIBCXX14_CONSTEXPR
+          .                 bool
+-- line 386 ----------------------------------------
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /usr/include/c++/15/bits/stl_algobase.h
+--------------------------------------------------------------------------------
+Ir                     
+
+-- line 231 ----------------------------------------
+            .             template<typename _Tp>
+            .               _GLIBCXX_NODISCARD _GLIBCXX14_CONSTEXPR
+            .               inline const _Tp&
+            .               min(const _Tp& __a, const _Tp& __b)
+            .               {
+            .                 // concept requirements
+            .                 __glibcxx_function_requires(_LessThanComparableConcept<_Tp>)
+            .                 //return __b < __a ? __b : __a;
+        1,890 ( 0.00%)        if (__b < __a)
+            .           	return __b;
+            .                 return __a;
+            .               }
+            .           
+            .             /**
+            .              *  @brief This does what you think it does.
+            .              *  @ingroup sorting_algorithms
+            .              *  @param  __a  A thing of arbitrary type.
+-- line 247 ----------------------------------------
+-- line 250 ----------------------------------------
+            .              *
+            .              *  This is the simple classic generic implementation.  It will work on
+            .              *  temporary expressions, since they are only evaluated once, unlike a
+            .              *  preprocessor macro.
+            .             */
+            .             template<typename _Tp>
+            .               _GLIBCXX_NODISCARD _GLIBCXX14_CONSTEXPR
+            .               inline const _Tp&
+           12 ( 0.00%)      max(const _Tp& __a, const _Tp& __b)
+            .               {
+            .                 // concept requirements
+            .                 __glibcxx_function_requires(_LessThanComparableConcept<_Tp>)
+            .                 //return  __a < __b ? __b : __a;
+3,683,954,678 ( 1.55%)        if (__a < __b)
+            .           	return __b;
+            .                 return __a;
+            .               }
+            .           
+            .             /**
+            .              *  @brief This does what you think it does.
+            .              *  @ingroup sorting_algorithms
+            .              *  @param  __a  A thing of arbitrary type.
+-- line 271 ----------------------------------------
+-- line 396 ----------------------------------------
+            .           #pragma GCC diagnostic ignored "-Wc++17-extensions"
+            .             template<bool _IsMove, typename _OutIter, typename _InIter>
+            .               __attribute__((__always_inline__)) _GLIBCXX20_CONSTEXPR
+            .               inline void
+            .               __assign_one(_OutIter& __out, _InIter& __in)
+            .               {
+            .           #if __cplusplus >= 201103L
+            .                 if constexpr (_IsMove)
+           62 ( 0.00%)  	*__out = std::move(*__in);
+            .                 else
+            .           #endif
+            .           	*__out = *__in;
+           62 ( 0.00%)      }
+            .           
+            .             template<bool _IsMove, typename _InIter, typename _Sent, typename _OutIter>
+            .               _GLIBCXX20_CONSTEXPR
+            .               inline _OutIter
+            .               __copy_move_a2(_InIter __first, _Sent __last, _OutIter __result)
+            .               {
+            .                 typedef __decltype(*__first) _InRef;
+            .                 typedef __decltype(*__result) _OutRef;
+-- line 416 ----------------------------------------
+-- line 694 ----------------------------------------
+            .           #ifdef __cpp_lib_is_constant_evaluated
+            .                 else if (std::is_constant_evaluated())
+            .                  { } /* Skip the optimizations and use the loop at the end. */
+            .           #endif
+            .                 else if _GLIBCXX_CONSTEXPR (__memcpyable<_BI2, _BI1>::__value)
+            .           	{
+            .           	  ptrdiff_t __n = std::distance(__first, __last);
+            .           	  std::advance(__result, -__n);
+          156 ( 0.00%)  	  if (__builtin_expect(__n > 1, true))
+            .           	    {
+           64 ( 0.00%)  	      __builtin_memmove(_GLIBCXX_TO_ADDR(__result),
+          208 ( 0.00%)  => ???:0x0000000004003940 (16x)
+            .           				_GLIBCXX_TO_ADDR(__first),
+            .           				__n * sizeof(*__first));
+            .           	    }
+           62 ( 0.00%)  	  else if (__n == 1)
+            .           	    std::__assign_one<_IsMove>(__result, __first);
+            .           	  return __result;
+            .           	}
+            .           #if __cpp_lib_concepts
+            .                 else if constexpr (__memcpyable_iterators<_BI2, _BI1>)
+            .           	{
+            .           	  if (auto __n = __last - __first; __n > 1) [[likely]]
+            .           	    {
+-- line 716 ----------------------------------------
+-- line 1547 ----------------------------------------
+            .           
+            .             /// This is a helper function for the sort routines and for random.tcc.
+            .             //  Precondition: __n > 0.
+            .             template<typename _Tp>
+            .               inline _GLIBCXX_CONSTEXPR _Tp
+            .               __lg(_Tp __n)
+            .               {
+            .           #if __cplusplus >= 201402L
+          184 ( 0.00%)        return std::__bit_width(make_unsigned_t<_Tp>(__n)) - 1;
+            .           #else
+            .           #pragma GCC diagnostic push
+            .           #pragma GCC diagnostic ignored "-Wlong-long"
+            .                 // Use +__n so it promotes to at least int.
+            .                 return (sizeof(+__n) * __CHAR_BIT__ - 1)
+            .           	       - (sizeof(+__n) == sizeof(long long)
+            .           		    ? __builtin_clzll(+__n)
+            .           		    : (sizeof(+__n) == sizeof(long)
+-- line 1563 ----------------------------------------
+
+--------------------------------------------------------------------------------
+The following files chosen for auto-annotation could not be found:
+--------------------------------------------------------------------------------
+  ./libio/./libio/vsnprintf.c
+  ./locale/./locale/uselocale.c
+  ./math/../sysdeps/ieee754/dbl-64/s_llround.c
+  ./math/../sysdeps/ieee754/dbl-64/s_sin.c
+  ./math/../sysdeps/ieee754/dbl-64/s_sincos.c
+  ./stdio-common/./stdio-common/Xprintf_buffer_done.c
+  ./stdio-common/./stdio-common/Xprintf_buffer_write.c
+  ./stdio-common/./stdio-common/printf_fp.c
+  ./stdio-common/./stdio-common/vfprintf-internal.c
+  ./stdlib/../sysdeps/ieee754/dbl-64/dbl2mpn.c
+  ./stdlib/../sysdeps/x86/gmp-arch.h
+  ./stdlib/../sysdeps/x86_64/lshift.S
+  ./stdlib/../sysdeps/x86_64/mul_1.S
+  ./stdlib/../sysdeps/x86_64/rshift.S
+  ./stdlib/./stdlib/cmp.c
+  ./stdlib/./stdlib/divrem.c
+  ./stdlib/./stdlib/mul.c
+  ./string/../sysdeps/x86_64/multiarch/memchr-avx2.S
+  ./string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S
+  ./string/../sysdeps/x86_64/multiarch/strchr-avx2.S
+
+--------------------------------------------------------------------------------
+Ir                       
+--------------------------------------------------------------------------------
+205,880,957,305 (86.72%)  events annotated
+
