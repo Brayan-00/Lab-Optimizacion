@@ -98,3 +98,33 @@ Color convention:
 - Red: initial displaced and rotated source cloud.
 - Pale green: previous source positions across the collimation iterations.
 - Green: current aligned source cloud.
+
+
+# Ejercicio A 
+
+ Breve descripción del proyecto, su propósito en el procesamiento/alineación de perfiles (vía o riel tipo H) y el objetivo general de este laboratorio/práctica.
+
+---
+
+## 🛠️ 1. Estructura y Funciones Principales del Código
+*Sección destinada a identificar y documentar los bloques funcionales del archivo `point_cloud_collimation.cpp`.*
+
+- **Generación del perfil objetivo (H / Riel):** Explicación sintética de cómo se sintetiza o carga la nube de puntos del perfil de referencia (*target*).
+- **Deformación aleatoria del perfil fuente:** Descripción del proceso de aplicación de transformaciones (rígidas y/o no rígidas) al perfil fuente (*source*).
+- **Construcción de la estructura `GridIndex`:** Explicación del funcionamiento de la estructura de datos espacial para optimizar búsquedas.
+- **Búsqueda de vecinos más cercanos:** Detalle del algoritmo utilizado para la asociación de puntos entre perfiles.
+- **Estimación de la transformación rígida:** Explicación del método para calcular la matriz de rotación y traslación óptima (e.g., ICP / SVD).
+- **Comparación de perfiles (Centroides y Distancias):** Métodos empleados para la cuantificación de discrepancias geométricas.
+- **Renderizado de cuadros (Visor):** Breve síntesis del pipeline de generación visual de fotogramas (`.ppm`).
+
+---
+
+## 🚀 2. Instrucciones de Ejecución y Exportación
+*Sección con los comandos necesarios para reproducir los experimentos y exportar datos.*
+
+```bash
+# Compilación (si aplica)
+# ...
+
+# Ejecución exportando resultados a la carpeta reconstruction/
+./point_cloud_collimation --export
