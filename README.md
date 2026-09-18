@@ -696,6 +696,11 @@ Se agregó un límite (`max_radius`) a cuántos anillos de celdas explora la bú
 
 Esto hace al código alrededor de 2.3x más rápido con solo los dos cambios planteados.
 
+## ¿Se mantuvo la precisión del resultado final?
+
+Comparando `logs/before_optimizacion.log` y `logs/after_optimizacion.log`, el ICP converge en las mismas 45 iteraciones, con `match_rmse`, `transform_step`, `delta_theta_deg` y `delta_t` **idénticos** en cada paso,la transformación final recuperada es exactamente la misma:
+
+
 El programa mejoró porque se atacó directamente el cuello de botella que precisamente, el Ejercicio D había señalado: la búsqueda del punto más cercano. En vez de revisar los 100,000 puntos completos en profile_metrics, ahora solo se revisa una muestra (1 de cada 5), y en el ICP la búsqueda dejó de explorar celdas más allá de la distancia que realmente importa para el algoritmo. Al hacer menos búsquedas y que cada una cueste menos, el programa quedó 2.3 veces más rápido sin perder precisión en el resultado final.
 
 
