@@ -1,0 +1,7 @@
+
+ Performance counter stats for './point_cloud_collimation' (5 runs):
+
+   <not supported>      cpu-cycles:u                     #      nan GHz  cycles_frequency     
+
+      26,591009464 +- 0,361216597 seconds time elapsed  ( +-  1,36% )
+
