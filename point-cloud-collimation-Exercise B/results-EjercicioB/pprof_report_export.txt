@@ -1,0 +1,42 @@
+File: point_cloud_collimation
+Type: cpu
+Showing nodes accounting for 64.18s, 94.84% of 67.67s total
+Dropped 151 nodes (cum <= 0.34s)
+      flat  flat%   sum%        cum   cum%
+    38.55s 56.97% 56.97%     59.53s 87.97%  GridIndex::nearest
+       12s 17.73% 74.70%     14.50s 21.43%  std::_Hashtable::_M_find_before_node (inline)
+     3.85s  5.69% 80.39%      3.85s  5.69%  std::vector::operator[] (inline)
+     2.50s  3.69% 84.08%      2.50s  3.69%  udiv_qrnnd_x86 (inline)
+     2.48s  3.66% 87.75%      2.48s  3.66%  std::equal_to::operator() (inline)
+     1.45s  2.14% 89.89%      1.45s  2.14%  std::__detail::_Mod_range_hashing::operator() (inline)
+     0.75s  1.11% 91.00%      3.93s  5.81%  hack_digit
+     0.57s  0.84% 91.84%      4.86s  7.18%  __printf_fp_buffer_1
+     0.55s  0.81% 92.66%      0.55s  0.81%  std::max (inline)
+     0.46s  0.68% 93.34%      2.96s  4.37%  __mpn_divrem
+     0.21s  0.31% 93.65%      0.50s  0.74%  draw_cloud
+     0.20s   0.3% 93.94%      5.79s  8.56%  std::num_put::_M_insert_float
+     0.12s  0.18% 94.12%      5.13s  7.58%  __printf_buffer
+     0.10s  0.15% 94.27%      1.57s  2.32%  std::_Hashtable::_M_bucket_index (inline)
+     0.10s  0.15% 94.41%     15.98s 23.61%  std::_Hashtable::_M_locate (inline)
+     0.10s  0.15% 94.56%      6.05s  8.94%  std::ostream::_M_insert
+     0.06s 0.089% 94.65%     40.46s 59.79%  compare_profiles
+     0.04s 0.059% 94.71%     60.63s 89.60%  collimate_icp
+     0.04s 0.059% 94.77%      5.35s  7.91%  std::__cxx11::collate::do_transform
+     0.03s 0.044% 94.81%     39.76s 58.76%  nearest_neighbor_distances
+     0.01s 0.015% 94.83%      5.22s  7.71%  ___vsnprintf
+     0.01s 0.015% 94.84%      4.90s  7.24%  __printf_fp_l_buffer
+         0     0% 94.84%     67.67s   100%  __libc_start_call_main
+         0     0% 94.84%     67.67s   100%  __libc_start_main_impl
+         0     0% 94.84%      4.90s  7.24%  __printf_fp_spec (inline)
+         0     0% 94.84%      5.21s  7.70%  __vsnprintf_internal (inline)
+         0     0% 94.84%     67.67s   100%  _start
+         0     0% 94.84%      6.78s 10.02%  export_reconstruction (inline)
+         0     0% 94.84%     67.67s   100%  main
+         0     0% 94.84%      0.50s  0.74%  render_motion_frame
+         0     0% 94.84%     15.98s 23.61%  std::_Hashtable::find (inline)
+         0     0% 94.84%      1.47s  2.17%  std::__detail::_Hash_code_base::_M_bucket_index (inline)
+         0     0% 94.84%      2.48s  3.66%  std::__detail::_Hashtable_base::_M_equals (inline)
+         0     0% 94.84%      2.48s  3.66%  std::__detail::_Hashtable_base::_M_key_equals (inline)
+         0     0% 94.84%      6.05s  8.94%  std::ostream::operator<< (inline)
+         0     0% 94.84%     15.98s 23.61%  std::unordered_map::find (inline)
+         0     0% 94.84%      6.43s  9.50%  write_cloud_csv

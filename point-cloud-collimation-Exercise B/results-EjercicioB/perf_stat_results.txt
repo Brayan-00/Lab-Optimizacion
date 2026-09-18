@@ -1,0 +1,29 @@
+PERF STAT RESULTS
+=================
+
+Configuration: without --export
+--------------------------------
+cycles:            245,189,235,945
+instructions:      206,752,172,429
+branches:           27,446,425,765
+branch-misses:         688,580,519
+cache-references:   33,041,980,015
+cache-misses:        3,819,486,864
+
+seconds elapsed:       90.798969067
+seconds user:          90.182288000
+seconds sys:            0.260630000
+
+
+Configuration: with --export
+-----------------------------
+cycles:            281,455,201,968
+instructions:      239,079,272,994
+branches:           33,774,596,421
+branch-misses:         749,063,863
+cache-references:   33,157,376,901
+cache-misses:        4,403,591,431
+
+seconds elapsed:      105.118202995
+seconds user:         103.690064000
+seconds sys:            0.520424000
