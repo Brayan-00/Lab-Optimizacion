@@ -696,4 +696,12 @@ Se agregó un límite (`max_radius`) a cuántos anillos de celdas explora la bú
 
 Esto hace al código alrededor de 2.3x más rápido con solo los dos cambios planteados.
 
-Callgrind y `pprof` fueron útiles para confirmar este resultado utilizando otras formas de medición.
+El programa mejoró porque se atacó directamente el cuello de botella que precisamente, el Ejercicio D había señalado: la búsqueda del punto más cercano. En vez de revisar los 100,000 puntos completos en profile_metrics, ahora solo se revisa una muestra (1 de cada 5), y en el ICP la búsqueda dejó de explorar celdas más allá de la distancia que realmente importa para el algoritmo. Al hacer menos búsquedas y que cada una cueste menos, el programa quedó 2.3 veces más rápido sin perder precisión en el resultado final.
+
+
+# Conclusiones Generales
+
+
+Este laboratorio mostró que optimizar sin medir es apuntar ciegamente. Las herramientas de muestreo del Ejercicio B, el análisis a nivel de ensamblador del Ejercicio C y la instrumentación manual del Ejercicio D coincidieron en señalar el mismo cuello de botella que fue la búsqueda de vecino más cercano en GridIndex::nearest() , cada una aportando a un nivel distinto: el muestreo dijo dónde, el ensamblador explicó por qué a nivel de hardware (memory-bound, fallos de caché en la tabla hash), y la instrumentación manual dio el cuánto exacto a niveles de tiempo, incluso separando regiones que el muestreo mezclaba en un solo número.
+
+El Ejercicio E confirmó que ese diagnóstico valió la pena: atacar directamente el cuello de botella identificado dio una mejora de 2.3x, con un costo de medición mínimo frente al beneficio. Más que cualquier número de mejora individual, el aprendizaje transversal fue el proceso mismo — perfilar, entender la causa y solo entonces optimizar.
