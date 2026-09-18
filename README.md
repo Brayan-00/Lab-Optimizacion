@@ -75,7 +75,7 @@ Esto genera múltiples archivos csv y también los frames individuales de extens
 A partir de los fotogramas generados, es posible visualizar la evolución de ambas nubes de puntos y el proceso de iteración mediante el cual la nube origen se transforma y alinea con la nube objetivo:
 
 <p align="center">
-  <img src="point-cloud-collimation-ExerciseA/reconstruction/animation.gif" alt="Animación del proceso de colimación" width="600"/>
+  <img src="point-cloud-collimation-exerciseA/reconstruction/animation.gif" alt="Animación del proceso de colimación" width="600"/>
   <br>
   <em>Figura 1: Animación de la alineación y colimación de la nube de puntos.</em>
 </p>
@@ -88,18 +88,18 @@ A partir de los datos exportados en los archivos CSV, se generaron las siguiente
 
 | Métrica de Error y Distancia | Análisis de Convergencia y Cobertura |
 | :---: | :---: |
-| ![Distancia de Centroides](point-cloud-collimation-ExerciseA/reconstruction/plots/centroid_distance.png) | ![Convergencia](point-cloud-collimation-ExerciseA/reconstruction/plots/convergence.png) |
+| ![Distancia de Centroides](point-cloud-collimation-exerciseA/reconstruction/plots/centroid_distance.png) | ![Convergencia](point-cloud-collimation-exerciseA/reconstruction/plots/convergence.png) |
 | **Distancia de centroides** a lo largo de las iteraciones | **Criterio y velocidad de convergencia** |
-| ![Puntuación de Cobertura](point-cloud-collimation-ExerciseA/reconstruction/plots/coverage_score.png) | ![Distribución de Distancias](point-cloud-collimation-ExerciseA/reconstruction/plots/distance_distribution.png) |
+| ![Puntuación de Cobertura](point-cloud-collimation-exerciseA/reconstruction/plots/coverage_score.png) | ![Distribución de Distancias](point-cloud-collimation-exerciseA/reconstruction/plots/distance_distribution.png) |
 | **Puntuación de cobertura** del perfil | **Distribución de distancias** entre puntos |
 
 | Correspondencia y RMSE | Transformación Aplicada |
 | :---: | :---: |
-| ![Correspondencias (Matches)](point-cloud-collimation-ExerciseA/reconstruction/plots/matches.png) | ![Paso de Transformación](point-cloud-collimation-ExerciseA/reconstruction/plots/transformation.png) |
+| ![Correspondencias (Matches)](point-cloud-collimation-exerciseA/reconstruction/plots/matches.png) | ![Paso de Transformación](point-cloud-collimation-exerciseA/reconstruction/plots/transformation.png) |
 | **Emparejamiento de puntos (*matches*)** entre perfiles | **Evolución del paso de transformación** |
 
 <p align="center">
-  <img src="point-cloud-collimation-ExerciseA/reconstruction/plots/rmse_metrics.png" alt="Métricas RMSE" width="700"/>
+  <img src="point-cloud-collimation-exerciseA/reconstruction/plots/rmse_metrics.png" alt="Métricas RMSE" width="700"/>
   <br>
   <em>Figura 2: Evolución de las métricas de error cuadrático medio (RMSE).</em>
 </p>
