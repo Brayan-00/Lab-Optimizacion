@@ -1,7 +1,37 @@
 # Point Cloud Collimation
 
+## Integrantes, curso y profesor
 
-# Ejercicio A 
+### Integrantes
+
+1. Fiorela Chavarría Castrillo
+2. Fabián Parreaguirre Hidalgo
+3. Brayan Rodríguez Villalobos
+
+### Curso
+
+Introducción a la Computación Heterogénea - EL-5859
+
+### Profesor
+
+Dr. Luis G. León-Vega
+
+### Características de los sistemas
+
+# System Characteristics
+
+| # | Characteristic | Fabián | Brayan | Fiorela |
+|---|---------------|--------|--------|---------|
+| 1 | Processor model | Intel Core i5-1135G7 @ 2.40GHz (11th gen) | AMD A12-9800 RADEON R7, 12 Compute Cores 4C+8G | Intel Core i5-6300U @ 2.40GHz |
+| 2 | Architecture | x86_64 | x86_64 | x86_64 |
+| 3 | Physical cores | 4 | 4 | 2 |
+| 4 | Logical CPUs | 8 | 4 | 4 |
+| 5 | Threads per core | 2 (Hyperthreading) | 1 | 2 (Hyperthreading) |
+| 6 | Compiler | GCC 15.2.0 (Ubuntu 15.2.0-16ubuntu1) | GCC 15.2.0 (Ubuntu 15.2.0-16ubuntu1) | GCC 15.2.0 (Ubuntu 26.04 LTS ) |
+
+
+
+# Ejercicio A (Computadora de Brayan)
 
 ### Estructura y Funciones Principales del Código
 
@@ -45,7 +75,7 @@ Esto genera múltiples archivos csv y también los frames individuales de extens
 A partir de los fotogramas generados, es posible visualizar la evolución de ambas nubes de puntos y el proceso de iteración mediante el cual la nube origen se transforma y alinea con la nube objetivo:
 
 <p align="center">
-  <img src="point-cloud-collimation/reconstruction/animation.gif" alt="Animación del proceso de colimación" width="600"/>
+  <img src="point-cloud-collimation-Exercise%20A/reconstruction/animation.gif" alt="Animación del proceso de colimación" width="600"/>
   <br>
   <em>Figura 1: Animación de la alineación y colimación de la nube de puntos.</em>
 </p>
@@ -58,18 +88,18 @@ A partir de los datos exportados en los archivos CSV, se generaron las siguiente
 
 | Métrica de Error y Distancia | Análisis de Convergencia y Cobertura |
 | :---: | :---: |
-| ![Distancia de Centroides](point-cloud-collimation/reconstruction/plots/centroid_distance.png) | ![Convergencia](point-cloud-collimation/reconstruction/plots/convergence.png) |
+| ![Distancia de Centroides](point-cloud-collimation-Exercise%20A/reconstruction/plots/centroid_distance.png) | ![Convergencia](point-cloud-collimation-Exercise%20A/reconstruction/plots/convergence.png) |
 | **Distancia de centroides** a lo largo de las iteraciones | **Criterio y velocidad de convergencia** |
-| ![Puntuación de Cobertura](point-cloud-collimation/reconstruction/plots/coverage_score.png) | ![Distribución de Distancias](point-cloud-collimation/reconstruction/plots/distance_distribution.png) |
+| ![Puntuación de Cobertura](point-cloud-collimation-Exercise%20A/reconstruction/plots/coverage_score.png) | ![Distribución de Distancias](point-cloud-collimation-Exercise%20A/reconstruction/plots/distance_distribution.png) |
 | **Puntuación de cobertura** del perfil | **Distribución de distancias** entre puntos |
 
 | Correspondencia y RMSE | Transformación Aplicada |
 | :---: | :---: |
-| ![Correspondencias (Matches)](point-cloud-collimation/reconstruction/plots/matches.png) | ![Paso de Transformación](point-cloud-collimation/reconstruction/plots/transformation.png) |
+| ![Correspondencias (Matches)](point-cloud-collimation-Exercise%20A/reconstruction/plots/matches.png) | ![Paso de Transformación](point-cloud-collimation-Exercise%20A/reconstruction/plots/transformation.png) |
 | **Emparejamiento de puntos (*matches*)** entre perfiles | **Evolución del paso de transformación** |
 
 <p align="center">
-  <img src="point-cloud-collimation/reconstruction/plots/rmse_metrics.png" alt="Métricas RMSE" width="700"/>
+  <img src="point-cloud-collimation-Exercise%20A/reconstruction/plots/rmse_metrics.png" alt="Métricas RMSE" width="700"/>
   <br>
   <em>Figura 2: Evolución de las métricas de error cuadrático medio (RMSE).</em>
 </p>
@@ -82,7 +112,7 @@ Las métricas de error evalúan la alineación mediante distintas perspectivas: 
 Una deformación no rígida introduce distorsiones que alteran la forma interna del perfil. Dado que la transformación recuperada por el algoritmo está restringida a solo rotaciones y traslaciones, este no puede modelar los cambios locales, lo que impide que la transformación estimada coincida exactamente con la transformación ideal utilizada antes de deformar el objeto. Es decir que esta deformación hace que las dos nubes de puntos sean distintas, pero aún así el programa busca hacer que se alineen con bajo error.
 
 
-# Ejercicio B
+# Ejercicio B (Computadora de Fiorela)
 
 ## Profiling con perf
 
@@ -288,7 +318,7 @@ Según `perf stat`, el tiempo pasó de aproximadamente 90.80 s sin exportación 
 
 Esto representa un aumento cercano al 15.77 %. Con `--export` al parecer se realiza trabajo adicional.
 
-## Ejercicio C
+## Ejercicio C (Computadora de Brayan)
 
 ### Proceso de compilación y desensamblado
 
@@ -446,7 +476,7 @@ Este sobrecosto se eliminará al activar banderas de optimización como -O2, las
 
 
 
-# Ejercicio D
+# Ejercicio D (Computadora de Fabián)
 
 ## Regiones instrumentadas con std::chrono
 
@@ -562,7 +592,9 @@ La instrumentación manual solo dice cuánto tarda el bloque medido, no el por q
 
 Puede decirse que, `perf report` fue la herramienta más clara para identificar qué parte del programa convendría estudiar primero para una optimización, porque mostró directamente que `GridIndex::nearest()` concentraba aproximadamente un 97.14 % del `self overhead` sin exportación.
 
-# Ejercicio E
+(Los archivos source_motion.csv y profile_metrics.csv se encuentran dentro de la carpeta del ejercicio D)
+
+# Ejercicio E (Computadora de Fabián)
 
 Así se pueden correr ambos generando un txt con los resultados además del log:
 
